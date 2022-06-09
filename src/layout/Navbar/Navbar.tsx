@@ -1,5 +1,5 @@
-import Logo from "../../logo.svg?component";
-import { sectionLinks } from "../../utils/constants";
+import Logo from "@/logo.svg?component";
+import { sectionLinks } from "@utils/constants";
 import Drawer from "./Drawer";
 import SectionLink from "./SectionLink";
 

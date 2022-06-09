@@ -1,4 +1,4 @@
-import { LinkButton } from "../components";
+import { LinkButton } from "@components";
 
 const Hero = () => {
   const one = (

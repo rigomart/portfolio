@@ -1,5 +1,5 @@
-import { Layout } from "./layout";
-import { Hero } from "./sections";
+import { Layout } from "@layout";
+import { Hero } from "@sections";
 
 function App() {
   return (

@@ -1,8 +1,9 @@
-import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
 import { useRef, useState } from "react";
-import { useClickAway } from "../../hooks";
-import { sectionLinks } from "../../utils/constants";
-import { Button } from "../../components";
+import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
+
+import { Button } from "@components";
+import { useClickAway } from "@hooks";
+import { sectionLinks } from "@utils/constants";
 import SectionLink from "./SectionLink";
 
 const Drawer = () => {
