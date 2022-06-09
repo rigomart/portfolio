@@ -1,4 +1,4 @@
-import { Button, LinkButton } from "../components";
+import { LinkButton } from "../components";
 
 const Hero = () => {
   const one = (
@@ -7,10 +7,12 @@ const Hero = () => {
     </h1>
   );
   const two = (
-    <h2 className='text-5xl font-title font-semibold'>Miguel Rodriguez.</h2>
+    <h2 className='font-title font-semibold text-[8vw] md:text-[7vw] lg:text-7xl'>
+      Miguel Rodriguez.
+    </h2>
   );
   const three = (
-    <h3 className='text-3xl text-ocean-200 font-body1 font-semibold'>
+    <h3 className='text-3xl text-ocean-200 font-body1 font-semibold leading-none text-[7vw] md:text-[6vw] lg:text-6xl'>
       Contruyo cosas para la web.
     </h3>
   );
