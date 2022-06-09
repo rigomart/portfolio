@@ -1,5 +1,5 @@
 export const sectionLinks = [
-  { title: "About", path: "#about" },
-  { title: "Projects", path: "#projects" },
-  { title: "Contact", path: "#contact" },
+  { title: "Sobre mí", path: "#about" },
+  { title: "Proyectos", path: "#projects" },
+  { title: "Contacto", path: "#contact" },
 ];
