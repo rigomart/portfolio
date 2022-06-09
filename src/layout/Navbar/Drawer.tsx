@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import { useClickAway } from "../../hooks";
 import { sectionLinks } from "../../utils/constants";
 import { Button } from "../../components";
+import SectionLink from "./SectionLink";
 
 const Drawer = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,7 +35,12 @@ const Drawer = () => {
           <nav className='flex flex-col justify-center flex-1'>
             <ul className='flex flex-col gap-y-10'>
               {sectionLinks.map(({ path, title }, index) => (
-                <SectionLink index={index} path={path} title={title} />
+                <SectionLink
+                  direction='vertical'
+                  index={index}
+                  path={path}
+                  title={title}
+                />
               ))}
             </ul>
             <div className='grid place-items-center py-8'>
@@ -44,26 +50,6 @@ const Drawer = () => {
         </div>
       </div>
     </>
-  );
-};
-
-type SectionLinkProps = {
-  index: number;
-  title: string;
-  path: string;
-};
-
-const SectionLink = ({ index, title, path }: SectionLinkProps) => {
-  return (
-    <li className='font-mono text-base'>
-      <a
-        className='flex flex-col items-center text-ocean-100 hover:text-ocean-200'
-        href={path}
-      >
-        <span className='text-ocean-300'>0{index + 1}.</span>
-        <span>{title}</span>
-      </a>
-    </li>
   );
 };
 
