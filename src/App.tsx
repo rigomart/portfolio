@@ -1,9 +1,10 @@
 import { Layout } from "./layout";
+import { Hero } from "./sections";
 
 function App() {
   return (
     <Layout>
-      <h1 className='text-3xl font-bold underline'>Acá va el cuerpo</h1>
+      <Hero />
     </Layout>
   );
 }
