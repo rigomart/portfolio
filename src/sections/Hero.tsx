@@ -2,17 +2,17 @@ import { LinkButton } from "../components";
 
 const Hero = () => {
   const one = (
-    <h1 className='text-ocean-200 font-mono font-thin text-base'>
+    <h1 className='text-ocean-200 font-mono font-thin text-base -mb-1'>
       Bienvenido, mi nombre es
     </h1>
   );
   const two = (
-    <h2 className='font-title font-semibold text-[8vw] md:text-[7vw] lg:text-7xl'>
+    <h2 className='font-title font-semibold text-[8vw] md:text-[7vw] lg:text-7xl mb-2'>
       Miguel Rodriguez.
     </h2>
   );
   const three = (
-    <h3 className='text-3xl text-ocean-200 font-body1 font-semibold leading-none text-[7vw] md:text-[6vw] lg:text-6xl'>
+    <h3 className='text-3xl text-ocean-200 font-body1 font-semibold leading-none text-[7vw] md:text-[6vw] lg:text-6xl mb-5'>
       Contruyo cosas para la web.
     </h3>
   );
@@ -32,7 +32,7 @@ const Hero = () => {
   const items = [one, two, three, four];
 
   return (
-    <section className='min-h-[100vh] pb-[16vh] flex flex-col justify-center gap-y-4'>
+    <section className='min-h-[100vh] pb-[16vh] flex flex-col justify-center'>
       {items.map((item, index) => (
         <div key={index}>{item}</div>
       ))}
