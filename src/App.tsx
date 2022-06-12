@@ -1,10 +1,11 @@
 import { Layout } from "@layout";
-import { Hero } from "@sections";
+import { About, Hero } from "@sections";
 
 function App() {
   return (
     <Layout>
       <Hero />
+      <About />
     </Layout>
   );
 }

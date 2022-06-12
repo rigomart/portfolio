@@ -4,6 +4,7 @@ module.exports = {
     extend: {
       colors: {
         ocean: {
+          50: "#D4E2FF",
           100: "#99BBFF",
           200: "#4785FF",
           300: "#1F69FF",
