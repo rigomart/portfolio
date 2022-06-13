@@ -1,5 +1,5 @@
 import { Layout } from "@layout";
-import { About, Hero, Projects, Featured } from "@sections";
+import { About, Hero, Projects, Featured, Contact } from "@sections";
 
 function App() {
   return (
@@ -8,6 +8,7 @@ function App() {
       <About />
       <Featured />
       <Projects />
+      <Contact />
     </Layout>
   );
 }
