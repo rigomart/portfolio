@@ -1,3 +1,4 @@
+import { FeaturedProject, Project } from "@typing/dataTypes";
 export const sectionLinks = [
   { title: "Sobre mí", path: "#about" },
   { title: "Proyectos", path: "#projects" },
@@ -14,7 +15,7 @@ export const skills = [
   "Firebase",
 ];
 
-export const projects = [
+export const featuredProjects: FeaturedProject[] = [
   {
     title: "Jira Gas",
     description:
@@ -32,5 +33,23 @@ export const projects = [
     img: "https://pbs.twimg.com/media/FKIFaGFXsAEfiaT.jpg",
     url: "",
     github: "",
+  },
+];
+
+export const projects: Project[] = [
+  {
+    title: "Jira Gas",
+    description:
+      "quo itaque cumque atque fugiat magnam nulla quibusdam vero, ratione beatae! Corrupti velit voluptas minus pariatur nulla voluptatum, repellendus exercitationem earum.",
+    tech: ["TypeScript", "React", "Styled Components", "Firebase"],
+    url: "",
+  },
+  {
+    title: "Vercel Gas",
+    description:
+      "Harum unde asperiores, voluptatum aspernatur impedit at, quo itaque cumque atque fugiat magnam nulla quibusdam vero, ratione beatae! Corrupti velit voluptas minus pariatur nulla voluptatum, repellendus exercitationem earum.",
+    tech: ["TypeScript", "React", "Styled Components", "Firebase"],
+    github: "",
+    url: "",
   },
 ];

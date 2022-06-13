@@ -1,13 +1,11 @@
-import { ExternalLink } from "./icons";
-import CloseIcon from "./icons/CloseIcon";
-import GithubIcon from "./icons/GithubIcon";
-import MenuIcon from "./icons/MenuIcon";
+import { ExternalLink, Menu, Close, Folder, Github } from "./icons";
 
 const icons = {
-  menu: <MenuIcon />,
-  close: <CloseIcon />,
-  github: <GithubIcon />,
+  menu: <Menu />,
+  close: <Close />,
+  github: <Github />,
   extLink: <ExternalLink />,
+  folder: <Folder />,
 };
 
 type Props = {

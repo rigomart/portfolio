@@ -1,77 +1,41 @@
 import { Project } from "@typing/dataTypes";
-import Icon from "./Icon";
+import { Icon } from "@components";
 
 type Props = {
   project: Project;
-  orientation: "right" | "left";
 };
 
-const ProjectCard = ({ project, orientation }: Props) => {
-  let contentClassname = "";
-  let imgClassname = "";
-
-  if (orientation === "right") {
-    contentClassname = "md:col-start-5 xl:col-start-7 text-right";
-    imgClassname = " md:col-end-8";
-  } else {
-    contentClassname = "md:col-start-1 md:col-end-9 xl:col-end-7 text-left";
-    imgClassname = "md:col-start-6";
-  }
-
+const ProjectCard = ({ project }: Props) => {
   return (
-    <div className='my-20'>
-      <div className='grid grid-cols-12'>
-        <div
-          className={`col-start-1 col-end-13 row-start-1 row-end-1 ${contentClassname}
-         z-[2] flex flex-col justify-center py-3 px-10 md:px-0`}
-        >
-          <h4 className='font-mono text-sm text-ocean-400 mb-2'>
-            Featured Project
-          </h4>
-          <h3 className='font-title text-white text-2xl mb-2'>
-            {project.title}
-          </h3>
-          <div className='md:bg-ocean-800 text-slate-400 text-sm font-body2 rounded-md md:p-6 mb-4 md:shadow-sm md:shadow-black'>
-            <p>{project.description}</p>
-          </div>
-          <ul
-            className={`flex flex-wrap font-mono text-sm gap-x-4 text-slate-500 gap-y-1 mb-4 ${
-              orientation === "right" ? "justify-end" : ""
-            }`}
-          >
-            {project.tech.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-          <div
-            className={`flex gap-x-3 items-center ${
-              orientation === "right" ? "justify-end" : ""
-            }`}
-          >
-            <a href={project.github} target='_blank'>
+    <div className='bg-ocean-800 shadow-sm shadow-black rounded-md p-5 hover:shadow-ocean-500 transition duration-200'>
+      <div className='mb-4 flex justify-between'>
+        <Icon name='folder' />
+        <div className='flex gap-x-2'>
+          {project.github !== undefined && (
+            <a href={project.github}>
               <Icon name='github' />
             </a>
-
-            <a href={project.url} target='_blank'>
+          )}
+          {project.url !== undefined && (
+            <a href={project.url}>
               <Icon name='extLink' />
             </a>
-          </div>
-        </div>
-        <div
-          className={`col-start-1 col-end-13 row-start-1 row-end-1 ${imgClassname} flex 
-        items-center justify-center w-full max-w-full z-[1]`}
-        >
-          <a href={project.url} target='_blank'>
-            <div className='md:bg-black rounded-md overflow-hidden'>
-              <img
-                className='w-full max-w-full rounded-md opacity-10 md:opacity-80 object-cover object-center'
-                src={project.img}
-                alt={project.title}
-              />
-            </div>
-          </a>
+          )}
         </div>
       </div>
+      <h5 className='text-title font-title font-medium text-slate-200 text-lg mb-3'>
+        {project.title}
+      </h5>
+      <p className='text-slate-400 font-body1 text-sm mb-4'>
+        {project.description}
+      </p>
+      <ul className='flex gap-x-3 gap-y-2 font-mono text-sm text-slate-500 flex-wrap'>
+        {project.tech.map((tech, index) => (
+          <li className='whitespace-nowrap' key={index}>
+            {tech}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
