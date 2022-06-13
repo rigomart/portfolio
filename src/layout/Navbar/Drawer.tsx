@@ -1,7 +1,5 @@
 import { useRef, useState } from "react";
-import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
-
-import { Button } from "@components";
+import { Button, Icon } from "@components";
 import { useClickAway } from "@hooks";
 import { sectionLinks } from "@utils/constants";
 import SectionLink from "./SectionLink";
@@ -13,10 +11,12 @@ const Drawer = () => {
 
   return (
     <>
-      <MenuOutlined
+      <button
         onClick={() => setIsOpen((value) => !value)}
         className='text-ocean-300 text-2xl px-4 py-2 block sm:hidden'
-      />
+      >
+        <Icon name='menu' />
+      </button>
 
       <div
         className={`w-full block sm:hidden h-full fixed right-0 top-0 z-50 transition ease-in-out duration-200 ${
@@ -28,10 +28,10 @@ const Drawer = () => {
           className='z-40 absolute right-0 w-3/4 sm:w-1/2 md:w-72 flex flex-col overflow-y-auto h-full py-4 px-3 bg-ocean-800'
         >
           <button
-            className='z-10 mt-3 mb-4 px-2 self-end'
+            className='z-10 py-2 px-4 self-end'
             onClick={() => setIsOpen((value) => !value)}
           >
-            <CloseOutlined className='text-ocean-300 text-xl px-4 py-2 pt-0' />
+            <Icon name='close' />
           </button>
           <nav className='flex flex-col justify-center flex-1'>
             <ul className='flex flex-col gap-y-10'>

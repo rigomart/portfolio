@@ -14,6 +14,7 @@ export default defineConfig({
       "@layout": path.resolve(__dirname, "./src/layout"),
       "@utils": path.resolve(__dirname, "./src/utils"),
       "@assets": path.resolve(__dirname, "./src/assets"),
+      "@typing": path.resolve(__dirname, "./src/typing"),
     },
   },
   plugins: [svgr(), react()],

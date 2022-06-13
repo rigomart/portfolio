@@ -13,3 +13,24 @@ export const skills = [
   "Redux",
   "Firebase",
 ];
+
+export const projects = [
+  {
+    title: "Jira Gas",
+    description:
+      "quo itaque cumque atque fugiat magnam nulla quibusdam vero, ratione beatae! Corrupti velit voluptas minus pariatur nulla voluptatum, repellendus exercitationem earum.",
+    tech: ["TypeScript", "React", "Styled Components", "Firebase"],
+    img: "https://img.freepik.com/vector-gratis/plantilla-panel-usuario-interfaz-tablero_52683-23323.jpg?w=2000",
+    url: "",
+    github: "",
+  },
+  {
+    title: "Vercel Gas",
+    description:
+      "Harum unde asperiores, voluptatum aspernatur impedit at, quo itaque cumque atque fugiat magnam nulla quibusdam vero, ratione beatae! Corrupti velit voluptas minus pariatur nulla voluptatum, repellendus exercitationem earum.",
+    tech: ["TypeScript", "React", "Styled Components", "Firebase"],
+    img: "https://pbs.twimg.com/media/FKIFaGFXsAEfiaT.jpg",
+    url: "",
+    github: "",
+  },
+];

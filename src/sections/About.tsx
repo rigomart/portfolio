@@ -4,7 +4,7 @@ import myPhoto from "@assets/me.jpg";
 
 const About = () => {
   return (
-    <div className='py-24'>
+    <section className='py-24'>
       <Title num='01.' text='Sobre mí' />
       <div className='grid grid-cols-1 md:grid-cols-3 gap-x-10'>
         <div className='col-span-2'>
@@ -42,7 +42,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
