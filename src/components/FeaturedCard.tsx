@@ -64,7 +64,7 @@ const ProjectCard = ({ project, orientation }: Props) => {
           <a href={project.url} target='_blank'>
             <div className='md:bg-black rounded-md overflow-hidden'>
               <img
-                className='w-full max-w-full rounded-md opacity-10 md:opacity-80 object-cover object-center'
+                className='w-full max-w-full rounded-md opacity-20 md:opacity-80 object-cover object-center'
                 src={project.img}
                 alt={project.title}
               />

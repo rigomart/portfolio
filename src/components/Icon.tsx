@@ -1,4 +1,12 @@
-import { ExternalLink, Menu, Close, Folder, Github } from "./icons";
+import {
+  ExternalLink,
+  Menu,
+  Close,
+  Folder,
+  Github,
+  LinkedIn,
+  Twitter,
+} from "./icons";
 
 const icons = {
   menu: <Menu />,
@@ -6,6 +14,8 @@ const icons = {
   github: <Github />,
   extLink: <ExternalLink />,
   folder: <Folder />,
+  linkedin: <LinkedIn />,
+  twitter: <Twitter />,
 };
 
 type Props = {
