@@ -2,7 +2,7 @@ const ExternalLinkIcon = () => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      fill='#64748b'
+      fill='#c6c6c6'
       viewBox='0 0 128 128'
       width='28px'
       height='28px'
