@@ -6,6 +6,7 @@ import {
   Github,
   LinkedIn,
   Twitter,
+  Logo,
 } from "./icons";
 
 const icons = {
@@ -16,6 +17,7 @@ const icons = {
   folder: <Folder />,
   linkedin: <LinkedIn />,
   twitter: <Twitter />,
+  logo: <Logo />,
 };
 
 type Props = {

@@ -29,7 +29,7 @@ const SideInfo = () => {
       </div>
 
       {/* Right side info */}
-      <div className='fixed bottom-10 right-8'>
+      <div className='hidden md:block fixed bottom-10 right-8'>
         <a
           className='font-body1 tracking-wide text-[0.8rem] text-slate-300 
           [writing-mode:vertical-rl] hover:text-ocean-100 hover:-translate-y-1 

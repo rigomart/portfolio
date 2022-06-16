@@ -1,13 +1,26 @@
+const sizes = {
+  sm: "px-6 py-2 text-sm",
+  md: "px-8 py-3 text-base",
+  lg: "px-10 py-4 text-base",
+};
+
 type Props = {
   type?: "button" | "submit" | "reset";
   children: React.ReactNode;
   onClick?: () => void;
+  size?: "sm" | "md" | "lg";
 };
 
-const Button = ({ type = "button", children, onClick = () => {} }: Props) => {
+const Button = ({
+  type = "button",
+  children,
+  onClick = () => {},
+  size = "md",
+}: Props) => {
   return (
     <button
-      className='border-2 rounded-md px-8 py-3 font-mono border-ocean-200 text-ocean-200 hover:bg-ocean-700 transition-colors duration-150 ease-linear'
+      className={`border-2 rounded-md ${sizes[size]} font-mono border-ocean-200 text-ocean-200 
+      hover:bg-ocean-700 transition-colors duration-150 ease-linear`}
       onClick={onClick}
       type={type}
     >
