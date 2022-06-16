@@ -7,9 +7,6 @@ const Folder = () => {
       viewBox='0 0 32 32'
       version='1.1'
     >
-      <title>icon 94 folder</title>
-      <desc>Created with Sketch.</desc>
-      <defs />
       <g
         id='Page-1'
         stroke='none'

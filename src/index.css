@@ -7,3 +7,8 @@ body,
 #root {
   min-height: 100%;
 }
+
+html {
+  scroll-behavior: smooth;
+  background-color: #000514;
+}

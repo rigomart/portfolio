@@ -14,7 +14,7 @@ const Navbar = () => {
         className={`${
           show ? "" : "-translate-y-16"
         } fixed transition duration-150 ease-in-out w-full px-4 sm:px-8 md:px-14 z-20 
-        bg-ocean-900 flex items-center justify-between h-16`}
+        bg-ocean-900 md:bg-ocean-900/60 md:backdrop-blur-lg flex items-center justify-between h-16`}
       >
         <a href='/'>
           <Logo className='h-12' />
