@@ -1,4 +1,5 @@
 export type FeaturedProject = {
+  id: string;
   title: string;
   description: string;
   tech: string[];
@@ -8,6 +9,7 @@ export type FeaturedProject = {
 };
 
 export type Project = {
+  id: string;
   title: string;
   description: string;
   tech: string[];

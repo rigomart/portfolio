@@ -1,7 +1,9 @@
-import { ProjectCard } from "@components";
-import { projects } from "@utils/constants";
+import { Button, ProjectCard } from "@components";
+import useProjects from "@hooks/useProjects";
 
 const Projects = () => {
+  const { projects } = useProjects();
+
   return (
     <section className='py-16'>
       <h4 className='text-2xl font-title font-medium text-center mb-6'>
@@ -11,6 +13,11 @@ const Projects = () => {
         {projects.map((project, index) => (
           <ProjectCard key={index} project={project} />
         ))}
+      </div>
+      <div className='my-10 flex justify-center'>
+        <a href='https://github.com/LeuGimrt' target='_blank'>
+          <Button size='sm'>Ver más</Button>
+        </a>
       </div>
     </section>
   );

@@ -15,6 +15,7 @@ export default defineConfig({
       "@utils": path.resolve(__dirname, "./src/utils"),
       "@assets": path.resolve(__dirname, "./src/assets"),
       "@typing": path.resolve(__dirname, "./src/typing"),
+      "@config": path.resolve(__dirname, "./src/config"),
     },
   },
   plugins: [svgr(), react()],
