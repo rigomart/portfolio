@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Transition } from "react-transition-group";
 
 import Logo from "@/logo.svg?component";
@@ -6,15 +5,11 @@ import { fadeDownStyles, fadeStyles, sectionLinks } from "@utils";
 import Drawer from "./Drawer";
 import SectionLink from "./SectionLink";
 import { Button } from "@components";
-import { useShowOnScroll } from "@hooks";
+import { useMounted, useShowOnScroll } from "@hooks";
 
 const Navbar = () => {
   const { show } = useShowOnScroll();
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
+  const { isMounted } = useMounted();
 
   return (
     <>

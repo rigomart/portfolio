@@ -1,6 +1,11 @@
 import { LinkButton } from "@components";
+import { useMounted } from "@hooks";
+import { fadeUpStyles } from "@utils";
+import { Transition } from "react-transition-group";
 
 const Hero = () => {
+  const { isMounted } = useMounted();
+
   const one = (
     <h1 className='text-ocean-200 font-mono-title font-medium text-base'>
       Bienvenido, mi nombre es
@@ -34,7 +39,16 @@ const Hero = () => {
   return (
     <section className='min-h-[100vh] pb-[16vh] flex flex-col justify-center'>
       {items.map((item, index) => (
-        <div key={index}>{item}</div>
+        <Transition in={isMounted} key={index} timeout={(index + 7) * 100}>
+          {(state) => (
+            <div
+              className={`transition duration-1000 ease-in-out ${fadeUpStyles[state]}`}
+              key={index}
+            >
+              {item}
+            </div>
+          )}
+        </Transition>
       ))}
     </section>
   );

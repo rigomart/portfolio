@@ -1,17 +1,13 @@
 import { Icon } from "@components";
+import { useMounted } from "@hooks";
 import { fadeStyles } from "@utils";
-import { useState, useEffect } from "react";
 import { Transition } from "react-transition-group";
 
 const SideInfo = () => {
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
+  const { isMounted } = useMounted();
 
   return (
-    <Transition in={isMounted} timeout={800}>
+    <Transition in={isMounted} timeout={1400}>
       {(state) => (
         <>
           {/* Left side info */}

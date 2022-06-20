@@ -32,3 +32,11 @@ export const fadeDownStyles = {
   exiting: "-translate-y-4 opacity-0",
   exited: "-translate-y-4 opacity-0",
 };
+
+export const fadeUpStyles = {
+  unmounted: "translate-y-4 opacity-0",
+  entering: "translate-y-4 opacity-0",
+  entered: "opacity-100",
+  exiting: "translate-y-4 opacity-0",
+  exited: "translate-y-4 opacity-0",
+};
