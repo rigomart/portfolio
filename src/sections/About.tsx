@@ -1,10 +1,18 @@
+import { useRef, useEffect } from "react";
 import { Title } from "@components";
-import { skills } from "@utils/constants";
+import { skills } from "@utils";
 import myPhoto from "@assets/me.jpg";
+import sr from "@utils/sr";
 
 const About = () => {
+  const aboutRef = useRef<any>(null);
+
+  useEffect(() => {
+    sr(aboutRef.current, 200, 0.3);
+  }, []);
+
   return (
-    <section id='about' className='py-24'>
+    <section ref={aboutRef} id='about' className='py-24'>
       <Title num='01.' text='Sobre mí' />
       <div className='grid grid-cols-1 md:grid-cols-3 gap-x-10'>
         <div className='col-span-2'>

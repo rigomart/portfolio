@@ -17,6 +17,8 @@ module.exports = {
         },
       },
       fontFamily: {
+        "mono-title": ["'Azeret Mono'", "monospace"],
+        mono: ["'DM Mono'", "monospace"],
         body1: ['"Open Sans"', "sans-serif"],
         body2: ['"IBM Plex Sans"', "sans-serif"],
         title: ["Inter", "sans-serif"],

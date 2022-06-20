@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Button, Icon } from "@components";
 import { useClickAway } from "@hooks";
-import { sectionLinks } from "@utils/constants";
+import { sectionLinks } from "@utils";
 import SectionLink from "./SectionLink";
 
 const Drawer = () => {

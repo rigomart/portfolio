@@ -2,7 +2,7 @@ import { LinkButton } from "@components";
 
 const Hero = () => {
   const one = (
-    <h1 className='text-ocean-200 font-mono font-thin text-base'>
+    <h1 className='text-ocean-200 font-mono-title font-medium text-base'>
       Bienvenido, mi nombre es
     </h1>
   );

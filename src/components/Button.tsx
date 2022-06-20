@@ -9,6 +9,7 @@ type Props = {
   children: React.ReactNode;
   onClick?: () => void;
   size?: "sm" | "md" | "lg";
+  className?: string;
 };
 
 const Button = ({
@@ -16,11 +17,12 @@ const Button = ({
   children,
   onClick = () => {},
   size = "md",
+  className = "",
 }: Props) => {
   return (
     <button
       className={`border-2 rounded-md ${sizes[size]} font-mono border-ocean-200 text-ocean-200 
-      hover:bg-ocean-700 transition-colors duration-150 ease-linear`}
+      hover:bg-ocean-700 transition-colors duration-150 ease-linear ${className}`}
       onClick={onClick}
       type={type}
     >

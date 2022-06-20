@@ -1,12 +1,36 @@
+import { useEffect, useState } from "react";
+import { Transition } from "react-transition-group";
+
 import Logo from "@/logo.svg?component";
-import { sectionLinks } from "@utils/constants";
+import { sectionLinks } from "@utils";
 import Drawer from "./Drawer";
 import SectionLink from "./SectionLink";
-import useShowOnScroll from "../hooks/useShowOnScroll";
 import { Button } from "@components";
+import { useShowOnScroll } from "@hooks";
+
+const fadeStyles = {
+  unmounted: "opacity-0",
+  entering: "opacity-0",
+  entered: "opacity-100",
+  exiting: "opacity-0",
+  exited: "opacity-0",
+};
+
+const fadeDownStyles = {
+  unmounted: "-translate-y-4 opacity-0",
+  entering: "-translate-y-4 opacity-0",
+  entered: "opacity-100",
+  exiting: "-translate-y-4 opacity-0",
+  exited: "-translate-y-4 opacity-0",
+};
 
 const Navbar = () => {
   const { show } = useShowOnScroll();
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   return (
     <>
@@ -16,20 +40,46 @@ const Navbar = () => {
         } fixed transition duration-150 ease-in-out w-full px-4 sm:px-8 md:px-14 z-20 
         bg-ocean-900 md:bg-ocean-900/60 md:backdrop-blur-lg flex items-center justify-between h-16`}
       >
-        <a href='/'>
-          <Logo className='h-12' />
-        </a>
+        <Transition in={isMounted} timeout={0}>
+          {(state) => (
+            <a
+              href='/'
+              className={`transition duration-500 ease-in-out ${fadeStyles[state]}`}
+            >
+              <Logo className='h-12' />
+            </a>
+          )}
+        </Transition>
+
         <nav>
           <ul className='hidden sm:flex gap-x-6 items-center'>
             {sectionLinks.map(({ path, title }, index) => (
-              <SectionLink
-                direction='horizontal'
-                index={index}
-                path={path}
-                title={title}
-              />
+              <Transition
+                in={isMounted}
+                timeout={(index + 1) * 100}
+                key={index}
+              >
+                {(state) => (
+                  <SectionLink
+                    className={`transition duration-500 ease-in-out ${fadeDownStyles[state]}`}
+                    direction='horizontal'
+                    index={index}
+                    path={path}
+                    title={title}
+                  />
+                )}
+              </Transition>
             ))}
-            <Button size='sm'>Currículum</Button>
+            <Transition in={isMounted} timeout={400}>
+              {(state) => (
+                <Button
+                  className={`transition duration-500 ease-in-out ${fadeDownStyles[state]}`}
+                  size='sm'
+                >
+                  Currículum
+                </Button>
+              )}
+            </Transition>
           </ul>
         </nav>
         <Drawer />

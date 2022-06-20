@@ -3,11 +3,18 @@ type Props = {
   path: string;
   title: string;
   index: number;
+  className?: string;
 };
 
-const SectionLink = ({ direction, path, title, index }: Props) => {
+const SectionLink = ({
+  direction,
+  path,
+  title,
+  index,
+  className = "",
+}: Props) => {
   return (
-    <li className='font-mono text-base'>
+    <li className={`font-mono sm:text-sm ${className}`}>
       <a
         className={`flex ${
           direction === "horizontal"
