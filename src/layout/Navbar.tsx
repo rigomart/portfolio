@@ -2,27 +2,11 @@ import { useEffect, useState } from "react";
 import { Transition } from "react-transition-group";
 
 import Logo from "@/logo.svg?component";
-import { sectionLinks } from "@utils";
+import { fadeDownStyles, fadeStyles, sectionLinks } from "@utils";
 import Drawer from "./Drawer";
 import SectionLink from "./SectionLink";
 import { Button } from "@components";
 import { useShowOnScroll } from "@hooks";
-
-const fadeStyles = {
-  unmounted: "opacity-0",
-  entering: "opacity-0",
-  entered: "opacity-100",
-  exiting: "opacity-0",
-  exited: "opacity-0",
-};
-
-const fadeDownStyles = {
-  unmounted: "-translate-y-4 opacity-0",
-  entering: "-translate-y-4 opacity-0",
-  entered: "opacity-100",
-  exiting: "-translate-y-4 opacity-0",
-  exited: "-translate-y-4 opacity-0",
-};
 
 const Navbar = () => {
   const { show } = useShowOnScroll();
