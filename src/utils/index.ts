@@ -40,3 +40,5 @@ export const fadeUpStyles = {
   exiting: "translate-y-4 opacity-0",
   exited: "translate-y-4 opacity-0",
 };
+
+export { default as sr } from "./sr";

@@ -1,8 +1,7 @@
 import { useRef, useEffect } from "react";
 import { Title } from "@components";
-import { skills } from "@utils";
+import { skills, sr } from "@utils";
 import myPhoto from "@assets/me.jpg";
-import sr from "@utils/sr";
 
 const About = () => {
   const aboutRef = useRef<any>(null);
