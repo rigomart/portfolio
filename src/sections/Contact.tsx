@@ -1,8 +1,16 @@
+import { useEffect, useRef } from "react";
 import { Button } from "@components";
+import { sr } from "@utils";
 
 const Contact = () => {
+  const contactRef = useRef<any>();
+
+  useEffect(() => {
+    sr(contactRef.current, 200, 0.3);
+  }, []);
+
   return (
-    <div className='py-24 text-center'>
+    <section ref={contactRef} className='py-24 text-center'>
       <h3 className='text-base font-mono text-ocean-200 mb-5'>
         03. ¿Algún mensaje?
       </h3>
@@ -13,7 +21,7 @@ const Contact = () => {
         try my best to get back to you!
       </p>
       <Button>¡Salúdame!</Button>
-    </div>
+    </section>
   );
 };
 
