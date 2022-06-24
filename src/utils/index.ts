@@ -41,4 +41,12 @@ export const fadeUpStyles = {
   exited: "translate-y-4 opacity-0",
 };
 
+export const loaderAniStyles = {
+  unmounted: "opacity-0",
+  entering: "opacity-0",
+  entered: "opacity-100",
+  exiting: "opacity-0",
+  exited: "opacity-0",
+};
+
 export { default as sr } from "./sr";
