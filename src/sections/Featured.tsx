@@ -19,7 +19,7 @@ const Featured = () => {
   }, [projects]);
 
   return (
-    <section className='py-20'>
+    <section id='projects' className='py-20'>
       <div ref={titleRef}>
         <Title text='Algunos de mis proyectos' num='02.' />
       </div>

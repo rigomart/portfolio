@@ -18,21 +18,21 @@ const SideInfo = () => {
           >
             <a
               className='hover:-translate-y-1 transition duration-150 ease-in'
-              href=''
+              href='https://github.com/LeuGimrt'
               target='_blank'
             >
               <Icon name='github' />
             </a>
             <a
               className='hover:-translate-y-1 transition duration-150 ease-in'
-              href=''
+              href='https://www.linkedin.com/in/mirdordev/'
               target='_blank'
             >
               <Icon name='linkedin' />
             </a>
             <a
               className='hover:-translate-y-1 transition duration-150 ease-in'
-              href=''
+              href='https://twitter.com/LeuGimrt'
               target='_blank'
             >
               <Icon name='twitter' />
@@ -49,7 +49,7 @@ const SideInfo = () => {
               className='font-body1 tracking-wide text-[0.8rem] text-slate-300 
           [writing-mode:vertical-rl] hover:text-ocean-100 hover:-translate-y-1 
           transition duration-150 ease-in'
-              href=''
+              href='mailto:mirdor.dev@gmail.com'
             >
               mirdor.dev@gmail.com
             </a>

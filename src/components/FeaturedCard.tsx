@@ -23,7 +23,7 @@ const ProjectCard = ({ project, orientation }: Props) => {
       <div className='grid grid-cols-12'>
         <div
           className={`col-start-1 col-end-13 row-start-1 row-end-1 ${contentClassname}
-         z-[2] flex flex-col justify-center py-3 px-10 md:px-0`}
+         z-[2] flex flex-col justify-center py-3 px-2 sm:px-10 md:px-0`}
         >
           <h4 className='font-mono text-sm text-ocean-400 mb-2'>
             Featured Project

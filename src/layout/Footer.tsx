@@ -4,13 +4,13 @@ const Footer = () => {
   return (
     <footer className='py-6 pt-24 flex flex-col items-center justify-center'>
       <div className='flex gap-x-8 mb-6'>
-        <a href='' target='_blank'>
+        <a href='https://github.com/LeuGimrt' target='_blank'>
           <Icon name='github' />
         </a>
-        <a href='' target='_blank'>
+        <a href='https://www.linkedin.com/in/mirdordev/' target='_blank'>
           <Icon name='linkedin' />
         </a>
-        <a href='' target='_blank'>
+        <a href='https://twitter.com/LeuGimrt' target='_blank'>
           <Icon name='twitter' />
         </a>
       </div>

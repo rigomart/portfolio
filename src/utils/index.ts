@@ -1,7 +1,7 @@
 export const sectionLinks = [
-  { title: "Sobre mí", path: "#about" },
-  { title: "Proyectos", path: "#projects" },
-  { title: "Contacto", path: "#contact" },
+  { title: "About", path: "#about" },
+  { title: "Projects", path: "#projects" },
+  { title: "Contact", path: "#contact" },
 ];
 
 export const skills = [
@@ -12,6 +12,7 @@ export const skills = [
   "React Native",
   "Redux",
   "Firebase",
+  "GraphQL",
 ];
 
 export const navDelay = 1000;

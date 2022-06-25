@@ -15,7 +15,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <>
           <Navbar />
           <SideInfo />
-          <main className='pt-16 px-6 sm:px-10 md:px-24 lg:px-40 xl:px-64 max-w-[1600px] mx-auto'>
+          <main className='pt-16 px-6 sm:px-10 md:px-24 lg:px-40 xl:px-60 max-w-[1480px] mx-auto'>
             {children}
           </main>
           <Footer />

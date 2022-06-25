@@ -41,7 +41,7 @@ const Projects = () => {
       </div>
       <div className='my-10 flex justify-center'>
         <a href='https://github.com/LeuGimrt' target='_blank'>
-          <Button size='sm'>Ver más</Button>
+          <Button size='sm'>See More</Button>
         </a>
       </div>
     </section>

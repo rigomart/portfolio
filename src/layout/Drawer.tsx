@@ -19,7 +19,7 @@ const Drawer = () => {
     <>
       <button
         onClick={() => setIsOpen((value) => !value)}
-        className='text-ocean-300 text-2xl px-4 py-2 block sm:hidden'
+        className='text-ocean-300 text-2xl px-1 py-2 block sm:hidden'
       >
         <Icon name='menu' />
       </button>
