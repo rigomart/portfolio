@@ -4,11 +4,7 @@ const Footer = () => {
   return (
     <footer className='py-6 pt-24 flex flex-col items-center justify-center'>
       <div className='flex gap-x-8 mb-6'>
-        <a
-          href='https://github.com/mirdor'
-          target='_blank'
-          aria-aria-label='Github'
-        >
+        <a href='https://github.com/mirdor' target='_blank' aria-label='Github'>
           <Icon name='github' />
         </a>
         <a
@@ -27,7 +23,7 @@ const Footer = () => {
         </a>
       </div>
 
-      <div className='text-center text-[0.8rem] text-slate-600 font-mono'>
+      <div className='text-center text-[0.75rem] text-cyan-600 font-mono'>
         <a
           className='hover:text-ocean-200 transition-colors duration-200 ease-in'
           href='https://github.com/bchiang7/v4'

@@ -47,11 +47,11 @@ const ProjectCard = ({ project, orientation }: Props) => {
               orientation === "right" ? "justify-end" : ""
             }`}
           >
-            <a href={project.github} target='_blank'>
+            <a href={project.github} target='_blank' aria-label='Github'>
               <Icon name='github' />
             </a>
 
-            <a href={project.url} target='_blank'>
+            <a href={project.url} target='_blank' aria-label='External Link'>
               <Icon name='extLink' />
             </a>
           </div>

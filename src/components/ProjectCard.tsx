@@ -15,12 +15,12 @@ const ProjectCard = ({ project }: Props) => {
         <Icon name='folder' />
         <div className='flex gap-x-2'>
           {project.github !== undefined && (
-            <a href={project.github} target='_blank'>
+            <a href={project.github} target='_blank' aria-label='Github'>
               <Icon name='github' />
             </a>
           )}
           {project.url !== undefined && (
-            <a href={project.url} target='_blank'>
+            <a href={project.url} target='_blank' aria-label='External Link'>
               <Icon name='extLink' />
             </a>
           )}
