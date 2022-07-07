@@ -24,12 +24,12 @@ const ProjectCard = ({ project, orientation }: Props) => {
           className={`col-start-1 col-end-13 row-start-1 row-end-1 ${containerOrientation[orientation]}
          z-[2] flex flex-col justify-center py-3 px-2 sm:px-10 md:px-0`}
         >
-          <h4 className='font-mono text-sm text-ocean-400 mb-2'>
+          <h3 className='font-mono text-sm text-ocean-400 mb-2'>
             Featured Project
-          </h4>
-          <h3 className='font-title text-white text-2xl mb-2'>
-            {project.title}
           </h3>
+          <h4 className='font-title text-white text-2xl mb-2'>
+            {project.title}
+          </h4>
           <div className='md:bg-ocean-800 text-slate-400 text-sm font-body2 rounded-md md:p-6 mb-4 md:shadow-sm md:shadow-black'>
             <p>{project.description}</p>
           </div>
@@ -67,6 +67,8 @@ const ProjectCard = ({ project, orientation }: Props) => {
                 hover:scale-105 transition duration-200 ease-in-out object-cover object-center'
                 src={project.img}
                 alt={project.title}
+                width='100%'
+                height='100%'
               />
             </div>
           </a>

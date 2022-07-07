@@ -57,6 +57,8 @@ const About = () => {
                 src={myPhoto}
                 alt='A photo of myself'
                 title="Yes, that's me 😔"
+                width='100%'
+                height='100%'
               />
             </picture>
           </div>

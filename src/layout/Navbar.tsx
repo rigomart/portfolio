@@ -31,8 +31,8 @@ const Navbar = () => {
           )}
         </Transition>
 
-        <nav>
-          <ul className='hidden sm:flex gap-x-6 items-center'>
+        <nav className='hidden sm:flex'>
+          <ul className='flex gap-x-6 items-center'>
             {sectionLinks.map(({ path, title }, index) => (
               <Transition
                 in={isMounted}
@@ -50,17 +50,17 @@ const Navbar = () => {
                 )}
               </Transition>
             ))}
-            <Transition in={isMounted} timeout={400}>
-              {(state) => (
-                <Button
-                  className={`transition duration-500 ease-in-out ${fadeDownStyles[state]}`}
-                  size='sm'
-                >
-                  Resume
-                </Button>
-              )}
-            </Transition>
           </ul>
+          <Transition in={isMounted} timeout={400}>
+            {(state) => (
+              <Button
+                className={`sm:ml-5 transition duration-500 ease-in-out ${fadeDownStyles[state]}`}
+                size='sm'
+              >
+                Resume
+              </Button>
+            )}
+          </Transition>
         </nav>
         <Drawer />
       </header>

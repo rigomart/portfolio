@@ -4,13 +4,25 @@ const Footer = () => {
   return (
     <footer className='py-6 pt-24 flex flex-col items-center justify-center'>
       <div className='flex gap-x-8 mb-6'>
-        <a href='https://github.com/mirdor' target='_blank'>
+        <a
+          href='https://github.com/mirdor'
+          target='_blank'
+          aria-aria-label='Github'
+        >
           <Icon name='github' />
         </a>
-        <a href='https://www.linkedin.com/in/mirdordev/' target='_blank'>
+        <a
+          href='https://www.linkedin.com/in/mirdordev/'
+          target='_blank'
+          aria-label='LinkedIn'
+        >
           <Icon name='linkedin' />
         </a>
-        <a href='https://twitter.com/LeuGimrt' target='_blank'>
+        <a
+          href='https://twitter.com/LeuGimrt'
+          target='_blank'
+          aria-label='Twitter'
+        >
           <Icon name='twitter' />
         </a>
       </div>

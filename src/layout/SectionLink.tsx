@@ -24,7 +24,7 @@ const SectionLink = ({
         href={path}
       >
         <span
-          className={`text-ocean-300 text-sm ${
+          className={`text-ocean-100 text-sm ${
             direction === "horizontal" ? "mr-2" : ""
           } `}
         >

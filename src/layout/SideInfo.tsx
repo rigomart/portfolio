@@ -20,6 +20,7 @@ const SideInfo = () => {
               className='hover:-translate-y-1 transition duration-150 ease-in'
               href='https://github.com/mirdor'
               target='_blank'
+              aria-label='Github'
             >
               <Icon name='github' />
             </a>
@@ -27,6 +28,7 @@ const SideInfo = () => {
               className='hover:-translate-y-1 transition duration-150 ease-in'
               href='https://www.linkedin.com/in/mirdordev/'
               target='_blank'
+              aria-label='LinkedIn'
             >
               <Icon name='linkedin' />
             </a>
@@ -34,6 +36,7 @@ const SideInfo = () => {
               className='hover:-translate-y-1 transition duration-150 ease-in'
               href='https://twitter.com/LeuGimrt'
               target='_blank'
+              aria-label='Twitter'
             >
               <Icon name='twitter' />
             </a>
