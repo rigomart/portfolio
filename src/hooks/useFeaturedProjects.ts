@@ -20,7 +20,11 @@ const useFeaturedProjects = () => {
     const getFeaturedProjects = async () => {
       try {
         const data = await getDocs(projectsCollectionRef);
-        setProjects(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+        setProjects(
+          data.docs
+            .map((doc) => ({ ...doc.data(), id: doc.id }))
+            .sort((a, b) => a.order - b.order)
+        );
       } catch (error) {
         console.error("Data could not be obtained");
       }

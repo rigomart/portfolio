@@ -7,7 +7,7 @@ export const sectionLinks = [
 export const skills = [
   "JavaScript",
   "TypeScript",
-  "NodeJS",
+  "Node.js",
   "React",
   "React Native",
   "Redux",

@@ -18,7 +18,7 @@ const SideInfo = () => {
           >
             <a
               className='hover:-translate-y-1 transition duration-150 ease-in'
-              href='https://github.com/LeuGimrt'
+              href='https://github.com/mirdor'
               target='_blank'
             >
               <Icon name='github' />

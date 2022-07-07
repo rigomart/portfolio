@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className='py-6 pt-24 flex flex-col items-center justify-center'>
       <div className='flex gap-x-8 mb-6'>
-        <a href='https://github.com/LeuGimrt' target='_blank'>
+        <a href='https://github.com/mirdor' target='_blank'>
           <Icon name='github' />
         </a>
         <a href='https://www.linkedin.com/in/mirdordev/' target='_blank'>

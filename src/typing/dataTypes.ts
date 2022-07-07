@@ -6,6 +6,7 @@ export type FeaturedProject = {
   img: string;
   url: string;
   github: string;
+  order: number;
 };
 
 export type Project = {

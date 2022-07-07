@@ -1,28 +1,27 @@
 import { FeaturedProject } from "@typing/dataTypes";
 import Icon from "./Icon";
 
+const containerOrientation = {
+  right: "md:col-start-5 xl:col-start-7 text-right",
+  left: "md:col-start-1 md:col-end-9 xl:col-end-7 text-left",
+};
+
+const imgOrientation = {
+  right: "md:col-end-8",
+  left: "md:col-start-6",
+};
+
 type Props = {
   project: FeaturedProject;
   orientation: "right" | "left";
 };
 
 const ProjectCard = ({ project, orientation }: Props) => {
-  let contentClassname = "";
-  let imgClassname = "";
-
-  if (orientation === "right") {
-    contentClassname = "md:col-start-5 xl:col-start-7 text-right";
-    imgClassname = " md:col-end-8";
-  } else {
-    contentClassname = "md:col-start-1 md:col-end-9 xl:col-end-7 text-left";
-    imgClassname = "md:col-start-6";
-  }
-
   return (
-    <div className='my-20'>
+    <div className='my-28'>
       <div className='grid grid-cols-12'>
         <div
-          className={`col-start-1 col-end-13 row-start-1 row-end-1 ${contentClassname}
+          className={`col-start-1 col-end-13 row-start-1 row-end-1 ${containerOrientation[orientation]}
          z-[2] flex flex-col justify-center py-3 px-2 sm:px-10 md:px-0`}
         >
           <h4 className='font-mono text-sm text-ocean-400 mb-2'>
@@ -58,13 +57,14 @@ const ProjectCard = ({ project, orientation }: Props) => {
           </div>
         </div>
         <div
-          className={`col-start-1 col-end-13 row-start-1 row-end-1 ${imgClassname} flex 
+          className={`col-start-1 col-end-13 row-start-1 row-end-1 ${imgOrientation[orientation]} flex 
         items-center justify-center w-full max-w-full z-[1]`}
         >
           <a href={project.url} target='_blank'>
             <div className='md:bg-black rounded-md overflow-hidden'>
               <img
-                className='w-full max-w-full rounded-md opacity-20 md:opacity-80 object-cover object-center'
+                className='w-full max-w-full rounded-md opacity-20 md:opacity-60 hover:opacity-90 
+                hover:scale-105 transition duration-200 ease-in-out object-cover object-center'
                 src={project.img}
                 alt={project.title}
               />

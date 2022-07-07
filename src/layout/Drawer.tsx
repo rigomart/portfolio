@@ -41,6 +41,7 @@ const Drawer = () => {
           <ul className='flex flex-col gap-y-10'>
             {sectionLinks.map(({ path, title }, index) => (
               <SectionLink
+                key={index}
                 direction='vertical'
                 index={index}
                 path={path}
