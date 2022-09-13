@@ -13,7 +13,7 @@ const ButtonLink = ({ children, onClick = () => {}, to }: Props) => {
       onClick={onClick}
       href={to}
     >
-      <div>{children}</div>
+      {children}
     </Link>
   );
 };
