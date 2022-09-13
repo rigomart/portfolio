@@ -29,7 +29,7 @@ const Loader = ({ finishLoading }: { finishLoading: () => void }) => {
           className={`w-full h-full fixed flex justify-center items-center
           transition duration-500 ease-in-out ${loaderAniStyles[state]}`}
         >
-          <Image src="/logo.svg" height={36} width={36} alt="Logo" />
+          <Image src="/logo.svg" height={96} width={96} alt="Logo" />
         </div>
       )}
     </Transition>

@@ -21,8 +21,8 @@ const Button = ({
 }: Props) => {
   return (
     <button
-      className={`border-2 rounded-md ${sizes[size]} font-mono border-ocean-200 text-ocean-200 
-      hover:bg-ocean-700 transition-colors duration-150 ease-linear ${className}`}
+      className={`border-2 rounded-md ${sizes[size]} font-mono border-primary-200 text-primary-200 
+      hover:bg-primary-700 transition-colors duration-150 ease-linear ${className}`}
       onClick={onClick}
       type={type}
     >

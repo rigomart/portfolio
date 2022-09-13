@@ -49,5 +49,3 @@ export const loaderAniStyles = {
   exiting: 'opacity-0',
   exited: 'opacity-0',
 };
-
-export { default as sr } from './sr';

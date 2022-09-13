@@ -1,12 +1,8 @@
-import Icon from 'components/Icon';
+import { Layout } from 'layout';
 import type { NextPage } from 'next';
 
 const Home: NextPage = () => {
-  return (
-    <div>
-      <Icon name="logo" />
-    </div>
-  );
+  return <Layout>asdad</Layout>;
 };
 
 export default Home;
