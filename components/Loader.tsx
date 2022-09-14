@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import { Transition } from 'react-transition-group';
+import { Transition } from '@headlessui/react';
 import { loaderAniStyles } from 'utils';
 
-const Loader = ({ finishLoading }: { finishLoading: () => void }) => {
+const Loader = ({ onFinish }: { onFinish: () => void }) => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -13,25 +13,23 @@ const Loader = ({ finishLoading }: { finishLoading: () => void }) => {
     }, 1000);
 
     const timeout1 = setTimeout(() => {
-      finishLoading();
+      onFinish();
     }, 2000);
 
     return () => {
       clearTimeout(timeout1);
       clearTimeout(timeout2);
     };
-  }, [finishLoading]); // flag
+  }, [onFinish]);
 
   return (
-    <Transition in={isMounted} timeout={0}>
-      {(state) => (
-        <div
-          className={`w-full h-full fixed flex justify-center items-center
-          transition duration-500 ease-in-out ${loaderAniStyles[state]}`}
-        >
-          <Image src="/logo.svg" height={96} width={96} alt="Logo" />
-        </div>
-      )}
+    <Transition appear={true} show={isMounted} {...loaderAniStyles}>
+      <div
+        className={`w-full h-full fixed flex justify-center items-center
+          transition duration-500 ease-in-out`}
+      >
+        <Image src="/logo.svg" priority height={96} width={96} alt="Logo" />
+      </div>
     </Transition>
   );
 };

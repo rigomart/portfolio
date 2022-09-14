@@ -1,13 +1,12 @@
-import { Layout } from 'layout';
+import { Loader, ProjectCard } from 'components';
+
 import type { NextPage } from 'next';
-import { About, Hero } from 'sections';
 
 const Home: NextPage = () => {
   return (
-    <Layout>
-      <Hero />
-      <About />
-    </Layout>
+    <>
+      <Loader onFinish={() => {}} />
+    </>
   );
 };
 

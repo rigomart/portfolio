@@ -8,12 +8,13 @@ type Props = {
 
 const ButtonLink = ({ children, onClick = () => {}, to }: Props) => {
   return (
-    <Link
-      className="border-2 rounded-md px-8 py-3 font-mono border-primary-200 text-primary-200 hover:bg-primary-700 transition-colors duration-150 ease-linear"
-      onClick={onClick}
-      href={to}
-    >
-      {children}
+    <Link href={to}>
+      <a
+        className="border-2 rounded-md px-8 py-3 font-mono border-primary-200 text-primary-200 hover:bg-primary-700 transition-colors duration-150 ease-linear"
+        onClick={onClick}
+      >
+        {children}
+      </a>
     </Link>
   );
 };
