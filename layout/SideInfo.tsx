@@ -20,31 +20,25 @@ const SideInfo = () => {
       >
         <Link
           className="hover:-translate-y-1 transition duration-150 ease-in"
-          href="https://github.com/mirdor"
-          target="_blank"
-          rel="noreferrer"
+          href="https://github.com/mrodriguezto"
         >
-          <a aria-label="Github">
+          <a aria-label="Github" target="_blank">
             <Icon name="github" />
           </a>
         </Link>
         <Link
           className="hover:-translate-y-1 transition duration-150 ease-in"
           href="https://www.linkedin.com/in/mirdordev/"
-          target="_blank"
-          rel="noreferrer"
         >
-          <a aria-label="LinkedIn">
+          <a aria-label="LinkedIn" target="_blank">
             <Icon name="linkedin" />
           </a>
         </Link>
         <Link
           className="hover:-translate-y-1 transition duration-150 ease-in"
           href="https://twitter.com/mrodriguezto_"
-          target="_blank"
-          rel="noreferrer"
         >
-          <a aria-label="Twitter">
+          <a aria-label="Twitter" target="_blank">
             <Icon name="twitter" />
           </a>
         </Link>

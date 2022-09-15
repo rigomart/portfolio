@@ -50,14 +50,14 @@ const ProjectCard = ({ project }: Props) => {
               orientation === 'right' ? 'justify-end' : ''
             }`}
           >
-            <Link href={github} target="_blank" rel="noreferrer">
-              <a aria-label="Github">
+            <Link href={github}>
+              <a target="_blank" aria-label="Github">
                 <Icon name="github" />
               </a>
             </Link>
 
-            <Link href={url} rel="noreferrer" target="_blank">
-              <a aria-label="External Link">
+            <Link href={url}>
+              <a target="_blank" aria-label="External Link">
                 <Icon name="extLink" />
               </a>
             </Link>
@@ -67,8 +67,8 @@ const ProjectCard = ({ project }: Props) => {
           className={`col-start-1 col-end-13 row-start-1 row-end-1 ${imgOrientation[orientation]} flex 
         items-center justify-center w-full max-w-full z-[1]`}
         >
-          <Link href={url} target="_blank">
-            <div className="md:bg-black rounded-md overflow-hidden">
+          <Link href={url}>
+            <a className="md:bg-black rounded-md overflow-hidden" target="_blank">
               <Image
                 className="w-full max-w-full rounded-md opacity-20 md:opacity-60 hover:opacity-90 
                 hover:scale-105 transition duration-200 ease-in-out object-cover object-center"
@@ -77,7 +77,7 @@ const ProjectCard = ({ project }: Props) => {
                 width="100%"
                 height="100%"
               />
-            </div>
+            </a>
           </Link>
         </div>
       </div>

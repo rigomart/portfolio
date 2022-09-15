@@ -1,23 +1,22 @@
-import { useRef, useEffect } from 'react';
-import { Title } from 'components';
-import { skills } from 'utils';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+
+import { Title } from 'components';
+import { fadeUp, skills } from 'utils';
 
 const About = () => {
-  const aboutRef = useRef<any>(null);
-
-  useEffect(() => {
-    async function animate() {
-      if (aboutRef.current) {
-        const sr = (await import('utils/sr')).default;
-        sr(aboutRef.current, 200, 0.3);
-      }
-    }
-    animate();
-  }, []);
-
   return (
-    <section ref={aboutRef} id="about" className="py-24">
+    <motion.section
+      id="about"
+      className="py-24"
+      initial="hidden"
+      whileInView="visible"
+      variants={fadeUp}
+      viewport={{
+        once: true,
+        amount: 0.3,
+      }}
+    >
       <Title num="01." text="About Me" />
       <div className="grid grid-cols-1 md:grid-cols-3 gap-x-10">
         <div className="col-span-2">
@@ -61,14 +60,14 @@ const About = () => {
                 src="/images/me.jpg"
                 alt="A photo of myself"
                 title="Yes, that's me 😔"
-                width="100%"
-                height="100%"
+                width={900}
+                height={900}
               />
             </picture>
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

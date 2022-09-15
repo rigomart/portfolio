@@ -9,7 +9,6 @@ const Drawer = () => {
   const drawerRef = useRef<any>(null);
   useClickAway(drawerRef, () => setIsOpen(false));
 
-  // Disable body scroll when the drawer is opened
   useEffect(() => {
     if (isOpen) document.body.style.overflow = 'hidden';
     if (!isOpen) document.body.style.overflow = '';
@@ -40,7 +39,7 @@ const Drawer = () => {
         <nav className="flex flex-col justify-center flex-1">
           <ul className="flex flex-col gap-y-10">
             {sectionLinks.map(({ path, title }, index) => (
-              <li key={index}>
+              <li key={index} onClick={() => setIsOpen(false)}>
                 <SectionLink
                   direction="vertical"
                   index={index}
@@ -51,7 +50,7 @@ const Drawer = () => {
             ))}
           </ul>
           <div className="grid place-items-center py-8">
-            <Button>Currículum</Button>
+            <Button>Resume</Button>
           </div>
         </nav>
       </aside>

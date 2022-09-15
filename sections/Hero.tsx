@@ -1,11 +1,8 @@
 import { LinkButton } from 'components';
-import { useMounted } from 'hooks';
 import { fadeUp } from 'utils';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
-  const { isMounted } = useMounted();
-
   const one = (
     <h1 className="text-primary-200 font-mono-title font-medium text-sm sm:text-base mb-5">
       Welcome, my name is

@@ -1,4 +1,6 @@
-export const fadeIn = {
+import { Variants } from 'framer-motion';
+
+export const fadeIn: Variants = {
   hidden: { opacity: 0 },
   visible: ({ delay = 0 }) => ({
     opacity: [0, 1],
@@ -6,7 +8,7 @@ export const fadeIn = {
   }),
 };
 
-export const fadeDown = {
+export const fadeDown: Variants = {
   hidden: { opacity: 0, translateY: -16 },
   visible: (i: number) => ({
     opacity: 1,
@@ -17,14 +19,26 @@ export const fadeDown = {
   }),
 };
 
-export const fadeUp = {
+export const fadeUp: Variants = {
   hidden: { opacity: 0, translateY: 16 },
-  visible: (i: number) => ({
+  visible: (i: number = 0) => ({
     opacity: 1,
     translateY: 0,
     transition: {
       delay: i * 0.1,
-      duration: 1,
+      duration: 0.8,
     },
   }),
+};
+
+export const fadeUpSection: Variants = {
+  hidden: { opacity: 0, translateY: 30 },
+  visible: {
+    opacity: 1,
+    translateY: 0,
+    transition: {
+      type: 'tween',
+      duration: 1,
+    },
+  },
 };
