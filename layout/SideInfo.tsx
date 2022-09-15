@@ -15,7 +15,7 @@ const SideInfo = () => {
         initial="hidden"
         animate="visible"
         variants={fadeIn}
-        custom={{ delay: 1.4 }}
+        custom={{ delay: 1.2 }}
         className="fixed bottom-10 left-8 hidden md:flex flex-col gap-y-4"
       >
         <Link

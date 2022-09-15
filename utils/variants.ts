@@ -16,3 +16,15 @@ export const fadeDown = {
     },
   }),
 };
+
+export const fadeUp = {
+  hidden: { opacity: 0, translateY: 16 },
+  visible: (i: number) => ({
+    opacity: 1,
+    translateY: 0,
+    transition: {
+      delay: i * 0.1,
+      duration: 1,
+    },
+  }),
+};
