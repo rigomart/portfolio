@@ -1,36 +1,18 @@
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
-import { Transition } from '@headlessui/react';
-import { loaderAniStyles } from 'utils';
+import { motion } from 'framer-motion';
 
 const Loader = ({ onFinish }: { onFinish: () => void }) => {
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-    const timeout2 = setTimeout(() => {
-      setIsMounted(false);
-    }, 1000);
-
-    const timeout1 = setTimeout(() => {
-      onFinish();
-    }, 2000);
-
-    return () => {
-      clearTimeout(timeout1);
-      clearTimeout(timeout2);
-    };
-  }, [onFinish]);
-
   return (
-    <Transition appear={true} show={isMounted} {...loaderAniStyles}>
-      <div
-        className={`w-full h-full fixed flex justify-center items-center
-          transition duration-500 ease-in-out`}
+    <div className="w-full h-full fixed flex justify-center items-center">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: [null, 1, 1, 0], scale: [0.9, 1, 1, 0.8] }}
+        transition={{ duration: 2, times: [0, 0.25, 0.75, 1] }}
+        onAnimationComplete={onFinish}
       >
         <Image src="/logo.svg" priority height={96} width={96} alt="Logo" />
-      </div>
-    </Transition>
+      </motion.div>
+    </div>
   );
 };
 

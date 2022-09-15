@@ -25,22 +25,24 @@ type TransitionType = {
 };
 
 export const navDelay = 1000;
-export const loaderDelay = 200; // TODO: change to 2000
+export const loaderDelay = 200;
 
-export const fadeStyles = {
-  unmounted: 'opacity-0',
-  entering: 'opacity-0',
-  entered: 'opacity-100',
-  exiting: 'opacity-0',
-  exited: 'opacity-0',
+export const fadeStyles: TransitionType = {
+  enter: 'transition duration-500 ease-in-out',
+  enterFrom: 'opacity-0',
+  enterTo: 'opacity-100',
+  leave: 'transition duration-500 ease-in-out',
+  leaveFrom: 'opacity-100',
+  leaveTo: 'opacity-0',
 };
 
-export const fadeDownStyles = {
-  unmounted: '-translate-y-4 opacity-0',
-  entering: '-translate-y-4 opacity-0',
-  entered: 'opacity-100',
-  exiting: '-translate-y-4 opacity-0',
-  exited: '-translate-y-4 opacity-0',
+export const fadeDownStyles: TransitionType = {
+  enter: 'transition duration-500 ease-in-out',
+  enterFrom: '-translate-y-4 opacity-0',
+  enterTo: 'opacity-100',
+  leave: 'transition duration-500 ease-in-out',
+  leaveFrom: 'opacity-100',
+  leaveTo: 'opacity-0',
 };
 
 export const fadeUpStyles = {

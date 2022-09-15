@@ -40,13 +40,14 @@ const Drawer = () => {
         <nav className="flex flex-col justify-center flex-1">
           <ul className="flex flex-col gap-y-10">
             {sectionLinks.map(({ path, title }, index) => (
-              <SectionLink
-                key={index}
-                direction="vertical"
-                index={index}
-                path={path}
-                title={title}
-              />
+              <li key={index}>
+                <SectionLink
+                  direction="vertical"
+                  index={index}
+                  path={path}
+                  title={title}
+                />
+              </li>
             ))}
           </ul>
           <div className="grid place-items-center py-8">
