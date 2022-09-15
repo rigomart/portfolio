@@ -26,8 +26,8 @@ const Drawer = () => {
 
       <aside
         ref={drawerRef}
-        className={`z-40 fixed right-0 w-3/4 sm:w-1/2 md:w-72 flex flex-col h-full py-4 px-3 bg-primary-800 
-         sm:hidden  top-0 transition ease-in-out duration-200 ${
+        className={`z-40 fixed right-0 w-full xs:w-3/4 sm:w-1/2 md:w-72 flex flex-col h-full py-4 px-3 bg-dark-800
+         sm:hidden  top-0 transition ease-in-out duration-200 border-l border-primary-800 ${
            isOpen ? 'translate-x-0' : 'translate-x-full'
          }`}
       >

@@ -5,22 +5,20 @@ const Footer = () => {
   return (
     <footer className="py-6 pt-24 flex flex-col items-center justify-center">
       <div className="flex gap-x-8 mb-6">
-        <Link href="https://github.com/mirdor" target="_blank" aria-label="Github">
-          <Icon name="github" />
+        <Link href="https://github.com/mirdor" target="_blank">
+          <a aria-label="Github">
+            <Icon name="github" />
+          </a>
         </Link>
-        <Link
-          href="https://www.linkedin.com/in/mirdordev/"
-          target="_blank"
-          aria-label="LinkedIn"
-        >
-          <Icon name="linkedin" />
+        <Link href="https://www.linkedin.com/in/mirdordev/" target="_blank">
+          <a aria-label="LinkedIn">
+            <Icon name="linkedin" />
+          </a>
         </Link>
-        <Link
-          href="https://twitter.com/LeuGimrt"
-          target="_blank"
-          aria-label="Twitter"
-        >
-          <Icon name="twitter" />
+        <Link href="https://twitter.com/LeuGimrt" target="_blank">
+          <a aria-label="Twitter">
+            <Icon name="twitter" />
+          </a>
         </Link>
       </div>
 
@@ -30,7 +28,7 @@ const Footer = () => {
           href="https://github.com/bchiang7/v4"
           target="_blank"
         >
-          Adopted from the Brittany Chiang Portfolio
+          <a>Original design by Brittany Chiang</a>
         </Link>
       </div>
     </footer>

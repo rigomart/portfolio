@@ -10,7 +10,7 @@ body,
 
 html {
   scroll-behavior: smooth;
-  background-color: #000514;
+  background-color: #080808;
 }
 
 /* Selection and focus styles */
@@ -24,16 +24,16 @@ html {
 
 html {
   scrollbar-width: thin;
-  scrollbar-color: #001d6c #000514;
+  scrollbar-color: #001d6c #080808;
 }
 body::-webkit-scrollbar {
   width: 12px;
 }
 body::-webkit-scrollbar-track {
-  background: #000514;
+  background: #080808;
 }
 body::-webkit-scrollbar-thumb {
   background-color: #001d6c;
-  border: 3px solid #000514;
+  border: 3px solid #080808;
   border-radius: 8px;
 }

@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: "480px"
+      },
       colors: {
         primary: {
           50: "#D4E2FF",
@@ -21,6 +24,10 @@ module.exports = {
           800: "#000A29",
           900: "#000514",
         },
+        dark: {
+          900: '#080808',
+          800: '#0A0A0A',
+        }
       },
       fontFamily: {
         "mono-title": ["'Azeret Mono'", "monospace"],

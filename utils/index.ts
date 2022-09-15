@@ -15,36 +15,6 @@ export const skills = [
   'GraphQL',
 ];
 
-type TransitionType = {
-  enter: string;
-  enterFrom: string;
-  enterTo: string;
-  leave: string;
-  leaveFrom: string;
-  leaveTo: string;
-};
-
-export const navDelay = 1000;
-export const loaderDelay = 200;
-
-export const fadeStyles: TransitionType = {
-  enter: 'transition duration-500 ease-in-out',
-  enterFrom: 'opacity-0',
-  enterTo: 'opacity-100',
-  leave: 'transition duration-500 ease-in-out',
-  leaveFrom: 'opacity-100',
-  leaveTo: 'opacity-0',
-};
-
-export const fadeDownStyles: TransitionType = {
-  enter: 'transition duration-500 ease-in-out',
-  enterFrom: '-translate-y-4 opacity-0',
-  enterTo: 'opacity-100',
-  leave: 'transition duration-500 ease-in-out',
-  leaveFrom: 'opacity-100',
-  leaveTo: 'opacity-0',
-};
-
 export const fadeUpStyles = {
   unmounted: 'translate-y-4 opacity-0',
   entering: 'translate-y-4 opacity-0',
@@ -53,11 +23,4 @@ export const fadeUpStyles = {
   exited: 'translate-y-4 opacity-0',
 };
 
-export const loaderAniStyles: TransitionType = {
-  enter: 'transition-opacity duration-500',
-  enterFrom: 'opacity-0',
-  enterTo: 'opacity-100',
-  leave: 'transition-opacity duration-500',
-  leaveFrom: 'opacity-100',
-  leaveTo: 'opacity-0',
-};
+export * from './variants';

@@ -3,31 +3,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { fadeDownStyles, fadeStyles, sectionLinks } from 'utils';
+import { fadeDown, fadeIn, sectionLinks } from 'utils';
 import Drawer from './Drawer';
 import SectionLink from './SectionLink';
 import { Button } from 'components';
-import { useMounted, useShowOnScroll } from 'hooks';
+import { useShowOnScroll } from 'hooks';
 import { motion } from 'framer-motion';
-
-const fadeIn = {
-  hidden: { opacity: 0 },
-  visible: ({ delay = 0 }) => ({
-    opacity: [0, 1],
-    transition: { delay, duration: 0.5 },
-  }),
-};
-
-const fadeDown = {
-  hidden: { opacity: 0, translateY: -16 },
-  visible: (i: number) => ({
-    opacity: 1,
-    translateY: 0,
-    transition: {
-      delay: i * 0.1,
-    },
-  }),
-};
 
 const Navbar = () => {
   const { show } = useShowOnScroll();
@@ -38,7 +19,7 @@ const Navbar = () => {
         className={`${
           show ? '' : '-translate-y-16'
         } fixed transition duration-150 ease-in-out w-full px-4 sm:px-8 md:px-14 
-        z-20 bg-primary-900 md:bg-primary-900/60 md:backdrop-blur-lg flex items-center 
+        z-20 bg-dark md:bg-dark/60 md:backdrop-blur-lg flex items-center 
         justify-between h-16`}
       >
         {/* LOGO */}
