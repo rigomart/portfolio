@@ -1,13 +1,25 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import formidable from 'formidable';
 import { v2 as cloudinary } from 'cloudinary';
+import db from 'api/db';
+import Featured from 'api/models/Featured';
+import { IFeaturedProject } from 'types';
 cloudinary.config(process.env.CLOUDINARY_URL || '');
 
-type Data = {
-  message: string;
+type Data = { message: string } | IFeaturedProject;
+
+export const config = {
+  api: {
+    bodyParser: false,
+  },
 };
 
 export default function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
+  if (process.env.NODE_ENV !== 'development')
+    return res.status(403).json({
+      message: 'Only allowed on development',
+    });
+
   switch (req.method) {
     case 'POST':
       return createFeaturedProject(req, res);
@@ -24,6 +36,7 @@ async function createFeaturedProject(
   res: NextApiResponse<Data>,
 ) {
   let imageUrl = '';
+
   try {
     imageUrl = await parseFiles(req);
   } catch (error) {
@@ -32,24 +45,54 @@ async function createFeaturedProject(
     });
   }
 
-  // TODO:completar
+  const {
+    title = '',
+    description = '',
+    tech = '',
+    url = '',
+    github = '',
+    order = 0,
+  } = req.body;
+
+  await db.connect();
+  try {
+    const newFeatured = new Featured({
+      title,
+      description,
+      tech: tech.split(',').map((item: string) => item.trim()),
+      url,
+      github,
+      order,
+      img: imageUrl,
+    });
+    await newFeatured.save();
+    await db.disconnect();
+    return res.status(201).json(newFeatured);
+  } catch (error) {
+    await db.disconnect();
+    return res.status(400).json({
+      message: 'No se logró crear el proyecto',
+    });
+  }
 }
 
-async function saveFile(file: formidable.File): Promise<string> {
-  const { secure_url } = await cloudinary.uploader.upload(file.filepath);
+async function saveFile(img: formidable.File): Promise<string> {
+  const { secure_url } = await cloudinary.uploader.upload(img.filepath);
   return secure_url;
 }
 
 async function parseFiles(req: NextApiRequest): Promise<string> {
   return new Promise((resolve, reject) => {
     const form = new formidable.IncomingForm();
+
     form.parse(req, async (err, fields, files) => {
       if (err) {
         return reject(err);
       }
 
-      const filePath = await saveFile(files.file as formidable.File);
-      resolve(filePath);
+      req.body = fields;
+      const imgPath = await saveFile(files.img as formidable.File);
+      resolve(imgPath);
     });
   });
 }

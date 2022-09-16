@@ -17,6 +17,6 @@ const featuredSchema = new Schema(
 );
 
 const Featured: Model<IFeaturedProject> =
-  mongoose.models.Project || model('Featured', featuredSchema);
+  mongoose.models.Featured || model('Featured', featuredSchema);
 
 export default Featured;
