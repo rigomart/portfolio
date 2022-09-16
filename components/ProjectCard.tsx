@@ -1,9 +1,9 @@
 import Link from 'next/link';
-import { Project } from 'types/data';
+import { IProject } from 'types/data';
 import { Icon } from 'components';
 
 type Props = {
-  project: Project;
+  project: IProject;
 };
 
 const ProjectCard = ({ project }: Props) => {

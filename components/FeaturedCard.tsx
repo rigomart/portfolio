@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { FeaturedProject } from 'types/data';
+import { IFeaturedProject } from 'types/data';
 import Icon from './Icon';
 
 const containerOrientation = {
@@ -14,7 +14,7 @@ const imgOrientation = {
 };
 
 type Props = {
-  project: FeaturedProject;
+  project: IFeaturedProject;
 };
 
 const ProjectCard = ({ project }: Props) => {

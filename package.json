@@ -9,7 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "cloudinary": "^1.32.0",
+    "formidable": "^2.0.1",
     "framer-motion": "^7.3.5",
+    "mongoose": "^6.6.1",
     "next": "12.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -17,6 +20,7 @@
     "scrollreveal": "^4.0.9"
   },
   "devDependencies": {
+    "@types/formidable": "^2.0.5",
     "@types/node": "18.7.17",
     "@types/react": "18.0.20",
     "@types/react-dom": "18.0.6",

@@ -1,5 +1,5 @@
-export type FeaturedProject = {
-  id: string;
+export type IFeaturedProject = {
+  _id: string;
   title: string;
   description: string;
   tech: string[];
@@ -7,13 +7,17 @@ export type FeaturedProject = {
   url: string;
   github: string;
   order: number;
+  createdAt: string;
+  updatedAt: string;
 };
 
-export type Project = {
-  id: string;
+export type IProject = {
+  _id: string;
   title: string;
   description: string;
   tech: string[];
   url?: string;
   github?: string;
+  createdAt: string;
+  updatedAt: string;
 };
