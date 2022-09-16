@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 import { Title } from 'components';
-import { fadeUp, skills } from 'utils';
+import { fadeUpSection, skills } from 'utils';
 
 const About = () => {
   return (
@@ -11,10 +11,10 @@ const About = () => {
       className="py-24"
       initial="hidden"
       whileInView="visible"
-      variants={fadeUp}
+      variants={fadeUpSection}
       viewport={{
         once: true,
-        amount: 0.3,
+        amount: 0.5,
       }}
     >
       <Title num="01." text="About Me" />

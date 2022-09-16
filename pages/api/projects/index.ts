@@ -18,20 +18,31 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
   }
 }
 
-async function getProjects(req: NextApiRequest, res: NextApiResponse<Data>) {
+export async function getData(): Promise<{
+  error: boolean;
+  data: IProject[] | null;
+}> {
   await db.connect();
 
   try {
-    const projects = await Project.find();
+    const projects = await Project.find().lean();
     await db.disconnect();
 
-    return res.status(200).json(projects);
+    return { error: false, data: JSON.parse(JSON.stringify(projects)) };
   } catch (error) {
     await db.disconnect();
-    return res.status(503).json({
-      message: 'No se lograron obtener los datos',
-    });
+    return { error: true, data: null };
   }
+}
+
+async function getProjects(req: NextApiRequest, res: NextApiResponse<Data>) {
+  const { error, data } = await getData();
+
+  if (error) {
+    return res.status(503).json({ message: 'No se logró obtener los proyectos' });
+  }
+
+  return res.status(200).json(data!);
 }
 
 async function createProject(req: NextApiRequest, res: NextApiResponse<Data>) {

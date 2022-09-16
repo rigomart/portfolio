@@ -27,20 +27,31 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
   }
 }
 
-async function getFeaturedProjects(req: NextApiRequest, res: NextApiResponse<Data>) {
+export async function getData(): Promise<{
+  error: boolean;
+  data: IFeaturedProject[] | null;
+}> {
   await db.connect();
 
   try {
-    const featuredProjects = await Featured.find();
+    const projects = await Featured.find();
     await db.disconnect();
 
-    return res.status(200).json(featuredProjects);
+    return { error: false, data: JSON.parse(JSON.stringify(projects)) };
   } catch (error) {
     await db.disconnect();
-    return res.status(503).json({
-      message: 'No se lograron obtener los datos',
-    });
+    return { error: true, data: null };
   }
+}
+
+async function getFeaturedProjects(req: NextApiRequest, res: NextApiResponse<Data>) {
+  const { error, data } = await getData();
+
+  if (error) {
+    return res.status(503).json({ message: 'No se logró obtener los proyectos' });
+  }
+
+  return res.status(200).json(data!);
 }
 
 async function createFeaturedProject(

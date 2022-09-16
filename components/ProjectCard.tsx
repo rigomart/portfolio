@@ -9,8 +9,8 @@ type Props = {
 const ProjectCard = ({ project }: Props) => {
   return (
     <div
-      className="bg-primary-800 shadow-sm shadow-black rounded-md p-5 hover:shadow-primary-500 
-    transition duration-200 flex flex-col h-full"
+      className="bg-primary-800 shadow-sm shadow-black rounded-md p-5
+    transition duration-200 flex flex-col h-full ring-1 ring-primary-700 hover:ring-primary-600"
     >
       <div className="mb-4 flex justify-between">
         <Icon name="folder" />
