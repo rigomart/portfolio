@@ -1,12 +1,13 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import formidable from 'formidable';
 import { v2 as cloudinary } from 'cloudinary';
+
 import db from 'api/db';
 import Featured from 'api/models/Featured';
 import { IFeaturedProject } from 'types';
 cloudinary.config(process.env.CLOUDINARY_URL || '');
 
-type Data = { message: string } | IFeaturedProject;
+type Data = { message: string } | IFeaturedProject | IFeaturedProject[];
 
 export const config = {
   api: {
@@ -15,19 +16,30 @@ export const config = {
 };
 
 export default function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
-  if (process.env.NODE_ENV !== 'development')
-    return res.status(403).json({
-      message: 'Only allowed on development',
-    });
-
   switch (req.method) {
     case 'POST':
       return createFeaturedProject(req, res);
-
-    // TODO: PUT
+    case 'GET':
+      return getFeaturedProjects(req, res);
 
     default:
       return res.status(400).json({ message: 'Bad request' });
+  }
+}
+
+async function getFeaturedProjects(req: NextApiRequest, res: NextApiResponse<Data>) {
+  await db.connect();
+
+  try {
+    const featuredProjects = await Featured.find();
+    await db.disconnect();
+
+    return res.status(200).json(featuredProjects);
+  } catch (error) {
+    await db.disconnect();
+    return res.status(503).json({
+      message: 'No se lograron obtener los datos',
+    });
   }
 }
 
@@ -35,12 +47,17 @@ async function createFeaturedProject(
   req: NextApiRequest,
   res: NextApiResponse<Data>,
 ) {
+  if (process.env.NODE_ENV !== 'development')
+    return res.status(403).json({
+      message: 'Only allowed on development',
+    });
+
   let imageUrl = '';
 
   try {
     imageUrl = await parseFiles(req);
   } catch (error) {
-    return res.status(400).json({
+    return res.status(503).json({
       message: 'No se logró subir la imagen',
     });
   }
@@ -70,7 +87,7 @@ async function createFeaturedProject(
     return res.status(201).json(newFeatured);
   } catch (error) {
     await db.disconnect();
-    return res.status(400).json({
+    return res.status(503).json({
       message: 'No se logró crear el proyecto',
     });
   }

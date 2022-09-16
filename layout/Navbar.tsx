@@ -19,7 +19,7 @@ const Navbar = () => {
         className={`${
           show ? '' : '-translate-y-16'
         } fixed transition duration-150 ease-in-out w-full px-4 sm:px-8 md:px-14 
-        z-20 bg-dark md:bg-dark/60 md:backdrop-blur-lg flex items-center 
+        z-20 bg-dark-900 sm:bg-dark-900/60 sm:backdrop-blur-lg flex items-center 
         justify-between h-16`}
       >
         {/* LOGO */}
