@@ -26,7 +26,7 @@ const Footer = () => {
         Rebuilt with Next.js, Framer Motion and Tailwind CSS
       </div>
 
-      <div className="mb-6 text-center text-[0.75rem] text-primary-400 font-mono">
+      <div className="mb-6 text-center text-[0.75rem] text-cyan-600 font-mono">
         <Link href="https://github.com/bchiang7/v4">
           <a
             className="transition duration-200 ease-in hover:text-primary-200"

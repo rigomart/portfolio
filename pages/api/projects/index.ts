@@ -1,8 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import db from 'api/db';
-import Project from 'api/models/Project';
+import db from 'db';
+import Project from 'models/Project';
 import { IProject } from 'types';
-import { isValidObjectId } from 'mongoose';
 
 type Data = { message: string } | IProject | IProject[];
 

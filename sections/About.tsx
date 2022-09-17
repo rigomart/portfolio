@@ -63,16 +63,16 @@ const About = () => {
             <picture
               className="max-w-[16rem] after:absolute after:content-[''] after:border-2 after:h-full 
               after:w-full after:border-primary-300 after:top-4 after:left-4 after:rounded-md 
-              after:z-[-1] hover:after:-translate-x-1 hover:after:-translate-y-1 
-              hover:after:bg-primary-800 after:transition after:duration-200 ease-in-out"
+              after:z-[-1] after:transition after:duration-200 ease-in-out hover:after:-translate-x-1 
+              hover:after:-translate-y-1 first-letter:hover:after:bg-primary-800"
             >
               <Image
                 className="rounded-md"
                 src="/images/me.jpg"
                 alt="A photo of myself"
                 title="Yes, that's me 😔"
-                width={900}
-                height={900}
+                height={200}
+                width={200}
               />
             </picture>
           </div>

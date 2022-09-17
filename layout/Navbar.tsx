@@ -1,14 +1,12 @@
-// import { Transition } from 'react-transition-group';
-
 import Link from 'next/link';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 import { fadeDown, fadeIn, sectionLinks } from 'utils';
 import Drawer from './Drawer';
 import SectionLink from './SectionLink';
 import { Button } from 'components';
 import { useShowOnScroll } from 'hooks';
-import { motion } from 'framer-motion';
 
 const Navbar = () => {
   const { show } = useShowOnScroll();

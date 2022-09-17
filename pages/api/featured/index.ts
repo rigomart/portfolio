@@ -2,8 +2,8 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import formidable from 'formidable';
 import { v2 as cloudinary } from 'cloudinary';
 
-import db from 'api/db';
-import Featured from 'api/models/Featured';
+import db from 'db';
+import Featured from 'models/Featured';
 import { IFeaturedProject } from 'types';
 cloudinary.config(process.env.CLOUDINARY_URL || '');
 

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 import { Button, ProjectCard } from 'components';
-import Link from 'next/link';
 import { IProject } from 'types';
 import { fadeUp } from 'utils';
 

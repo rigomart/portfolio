@@ -1,6 +1,7 @@
+import { motion } from 'framer-motion';
+
 import { LinkButton } from 'components';
 import { fadeUp } from 'utils';
-import { motion } from 'framer-motion';
 
 const Hero = () => {
   const one = (

@@ -1,14 +1,10 @@
-import { Transition } from 'react-transition-group';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 import { Icon } from 'components';
-import { useMounted } from 'hooks';
 import { fadeIn } from 'utils';
 
 const SideInfo = () => {
-  const { isMounted } = useMounted();
-
   return (
     <>
       <motion.div
