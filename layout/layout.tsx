@@ -1,12 +1,15 @@
-import { useState } from 'react';
+import Head from 'next/head';
+import { useContext, useState } from 'react';
+
 import { Loader } from 'components';
 import Footer from './Footer';
 import Navbar from './Navbar';
 import SideInfo from './SideInfo';
-import Head from 'next/head';
+import { UIContext } from 'context';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const [isLoading, setIsLoading] = useState(true);
+  const { isDrawerOpened } = useContext(UIContext);
 
   return (
     <div className="bg-dark-900 text-gray-100 h-full relative">
@@ -23,7 +26,11 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <>
           <Navbar />
           <SideInfo />
-          <main className="pt-16 px-6 sm:px-10 md:px-24 lg:px-40 xl:px-60 max-w-[1480px] mx-auto">
+          <main
+            className={`pt-24 md:pt-20 px-6 sm:px-10 md:px-24 lg:px-40 xl:px-60 max-w-[1480px] mx-auto transition duration-300
+            ${isDrawerOpened ? 'blur-sm' : ''}
+          `}
+          >
             {children}
           </main>
           <Footer />

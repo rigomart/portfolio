@@ -22,11 +22,7 @@ const Footer = () => {
         </Link>
       </div>
 
-      <div className="my-4 text-center text-sm text-cyan-500 font-mono-title">
-        Rebuilt with Next.js, Framer Motion and Tailwind CSS
-      </div>
-
-      <div className="mb-6 text-center text-[0.75rem] text-cyan-600 font-mono">
+      <div className="my-2 text-center text-[0.75rem] text-cyan-600 font-mono px-4">
         <Link href="https://github.com/bchiang7/v4">
           <a
             className="transition duration-200 ease-in hover:text-primary-200"
@@ -35,6 +31,9 @@ const Footer = () => {
             Adopted from the Brittany Chiang Portfolio &#x2197;
           </a>
         </Link>
+      </div>
+      <div className="text-center text-[0.75rem] text-cyan-500 font-mono-title px-4">
+        Rebuilt with Next.js, Framer Motion and Tailwind CSS
       </div>
     </footer>
   );

@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { fadeDown, fadeIn, sectionLinks } from 'utils';
 import Drawer from './Drawer';
 import SectionLink from './SectionLink';
-import { Button } from 'components';
+// import { Button } from 'components';
 import { useShowOnScroll } from 'hooks';
 
 const Navbar = () => {
@@ -15,20 +15,22 @@ const Navbar = () => {
     <>
       <header
         className={`${
-          show ? '' : '-translate-y-16'
+          show ? '' : '-translate-y-20 md:-translate-y-16'
         } fixed transition duration-150 ease-in-out w-full px-4 sm:px-8 md:px-14 
         z-20 bg-dark-900 sm:bg-dark-900/60 sm:backdrop-blur-lg flex items-center 
-        justify-between h-16`}
+        justify-between h-20 md:h-16 `}
       >
-        {/* LOGO */}
         <Link href="/" passHref>
           <motion.a
+            className="h-full"
             initial={'hidden'}
             animate={'visible'}
             variants={fadeIn}
             custom={{ delay: 0 }}
           >
-            <Image src="/logo.svg" height={48} width={48} alt="Logo" />
+            <div className="relative h-full w-[54px] md:w-[48px]">
+              <Image src="/logo.svg" layout="fill" alt="Logo" />
+            </div>
           </motion.a>
         </Link>
 
@@ -57,9 +59,9 @@ const Navbar = () => {
             variants={fadeIn}
             custom={{ delay: 0.4 }}
           >
-            <Button className="sm:ml-5" size="sm">
+            {/* <Button className="sm:ml-5" size="sm">
               Resume
-            </Button>
+            </Button> */}
           </motion.div>
         </nav>
 

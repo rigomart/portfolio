@@ -25,7 +25,7 @@ const About = () => {
       variants={fadeUpSection}
       viewport={{
         once: true,
-        amount: 0.5,
+        amount: 0.2,
       }}
     >
       <Title num="01." text="About Me" />
@@ -64,7 +64,7 @@ const About = () => {
               className="max-w-[16rem] after:absolute after:content-[''] after:border-2 after:h-full 
               after:w-full after:border-primary-300 after:top-4 after:left-4 after:rounded-md 
               after:z-[-1] after:transition after:duration-200 ease-in-out hover:after:-translate-x-1 
-              hover:after:-translate-y-1 first-letter:hover:after:bg-primary-800"
+              hover:after:-translate-y-1"
             >
               <Image
                 className="rounded-md"
