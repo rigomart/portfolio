@@ -2,7 +2,18 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 import { Title } from 'components';
-import { fadeUpSection, skills } from 'utils';
+import { fadeUpSection } from 'utils';
+
+export const skills = [
+  'TypeScript',
+  'Node.js',
+  'React',
+  'React Native',
+  'Redux',
+  'Next.js',
+  'Firebase',
+  'GraphQL',
+];
 
 const About = () => {
   return (

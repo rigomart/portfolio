@@ -21,10 +21,9 @@ const Hero = () => {
   const four = (
     <>
       <p className="text-slate-400 mb-12 font-body2 leading-relaxed text-lg">
-        I am a software developer experienced in web development technologies, cloud
-        services, and, in the near future, mobile technologies. Currently, I am a
-        software engineering student building a path towards producing technologies
-        that would change the way people live.
+        I am a software developer experienced in web development, cloud services, and
+        mobile technologies. Currently, I am a software engineering student building
+        a path towards producing technologies that would change the way people live.
       </p>
       <LinkButton to="mailto:mirdor.dev@gmail.com">Contact Me!</LinkButton>
     </>

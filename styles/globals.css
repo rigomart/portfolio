@@ -24,16 +24,16 @@ html {
 
 html {
   scrollbar-width: thin;
-  scrollbar-color: #001d6c #080808;
+  scrollbar-color: #001d6c #060a13;
 }
 body::-webkit-scrollbar {
   width: 12px;
 }
 body::-webkit-scrollbar-track {
-  background: #080808;
+  background: #060a13;
 }
 body::-webkit-scrollbar-thumb {
   background-color: #001d6c;
-  border: 3px solid #080808;
+  border: 3px solid #060a13;
   border-radius: 8px;
 }

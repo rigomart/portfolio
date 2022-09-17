@@ -43,7 +43,7 @@ const Projects = ({ projects }: Props) => {
         ))}
       </div>
       <div className="my-10 flex justify-center">
-        <Link href="https://github.com/LeuGimrt">
+        <Link href="https://github.com/mrodriguezto">
           <a target="_blank">
             <Button size="sm">See More Projects</Button>
           </a>

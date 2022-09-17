@@ -10,7 +10,7 @@ const Loader = ({ onFinish }: { onFinish: () => void }) => {
         transition={{ duration: 2, times: [0, 0.25, 0.75, 1] }}
         onAnimationComplete={onFinish}
       >
-        <Image src="/logo.svg" priority height={96} width={96} alt="Logo" />
+        <Image src="/logo.svg" height={96} width={96} alt="Logo" />
       </motion.div>
     </div>
   );

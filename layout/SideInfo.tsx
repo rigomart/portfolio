@@ -28,7 +28,7 @@ const SideInfo = () => {
         </Link>
         <Link
           className="hover:-translate-y-1 transition duration-150 ease-in"
-          href="https://www.linkedin.com/in/mirdordev/"
+          href="https://www.linkedin.com/in/mrodriguezto/"
         >
           <a aria-label="LinkedIn" target="_blank">
             <Icon name="linkedin" />

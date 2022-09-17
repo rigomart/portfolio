@@ -4,15 +4,4 @@ export const sectionLinks = [
   { title: 'Contact', path: '#contact' },
 ];
 
-export const skills = [
-  'JavaScript',
-  'TypeScript',
-  'Node.js',
-  'React',
-  'React Native',
-  'Redux',
-  'Firebase',
-  'GraphQL',
-];
-
 export * from './variants';

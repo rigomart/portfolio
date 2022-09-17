@@ -3,12 +3,20 @@ import { Loader } from 'components';
 import Footer from './Footer';
 import Navbar from './Navbar';
 import SideInfo from './SideInfo';
+import Head from 'next/head';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
     <div className="bg-dark-900 text-gray-100 h-full relative">
+      <Head>
+        <title>Miguel Rodriguez | Portfolio</title>
+        <meta
+          name="description"
+          content="I am a software developer experienced in web development, cloud services, and mobile technologies."
+        />
+      </Head>
       {isLoading ? (
         <Loader onFinish={() => setIsLoading(false)} />
       ) : (
