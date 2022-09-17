@@ -26,7 +26,7 @@ export const fadeUp: Variants = {
     translateY: 0,
     transition: {
       delay: i * 0.1,
-      duration: 0.8,
+      duration: 0.5,
     },
   }),
 };
@@ -38,7 +38,7 @@ export const fadeUpSection: Variants = {
     translateY: 0,
     transition: {
       type: 'tween',
-      duration: 0.8,
+      duration: 0.5,
     },
   },
 };

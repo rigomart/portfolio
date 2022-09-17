@@ -8,7 +8,7 @@ const About = () => {
   return (
     <motion.section
       id="about"
-      className="py-24"
+      className="mb-36 pt-10"
       initial="hidden"
       whileInView="visible"
       variants={fadeUpSection}

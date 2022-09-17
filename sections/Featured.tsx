@@ -10,7 +10,7 @@ type Props = {
 
 const Featured = ({ projects }: Props) => {
   return (
-    <section id="projects" className="py-20">
+    <section id="projects" className="mb-36">
       <motion.div
         initial="hidden"
         whileInView="visible"

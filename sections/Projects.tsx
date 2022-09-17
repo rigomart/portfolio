@@ -11,7 +11,7 @@ type Props = {
 
 const Projects = ({ projects }: Props) => {
   return (
-    <section className="py-16">
+    <section className="mb-36">
       <motion.h4
         className="text-2xl font-title font-medium text-center mb-6"
         initial="hidden"
@@ -22,7 +22,7 @@ const Projects = ({ projects }: Props) => {
           amount: 0.1,
         }}
       >
-        Otros Proyectos
+        Other Projects
       </motion.h4>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
         {projects.map((project, index) => (

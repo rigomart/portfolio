@@ -23,11 +23,13 @@ const Footer = () => {
       </div>
 
       <div className="text-center text-[0.75rem] text-cyan-600 font-mono">
-        <Link
-          className="hover:text-primary-200 transition-colors duration-200 ease-in"
-          href="https://github.com/bchiang7/v4"
-        >
-          <a target="_blank">Original design by Brittany Chiang</a>
+        <Link href="https://github.com/bchiang7/v4">
+          <a
+            className="transition duration-200 ease-in hover:text-primary-200"
+            target="_blank"
+          >
+            Original design by Brittany Chiang
+          </a>
         </Link>
       </div>
     </footer>

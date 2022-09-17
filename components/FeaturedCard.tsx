@@ -68,14 +68,18 @@ const ProjectCard = ({ project }: Props) => {
         items-center justify-center w-full max-w-full z-[1]`}
         >
           <Link href={url}>
-            <a className="md:bg-black rounded-md overflow-hidden" target="_blank">
+            <a
+              className="md:bg-dark-900 rounded-md overflow-hidden relative w-full h-full"
+              target="_blank"
+            >
               <Image
-                className="w-full max-w-full rounded-md opacity-20 md:opacity-60 hover:opacity-90 
+                className="rounded-md opacity-20 md:opacity-60 hover:opacity-90 
                 hover:scale-105 transition duration-200 ease-in-out object-cover object-center"
                 src={img}
                 alt={title}
-                width="100%"
-                height="100%"
+                layout="fill"
+                objectFit="cover"
+                objectPosition="top"
               />
             </a>
           </Link>

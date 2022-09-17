@@ -4,7 +4,7 @@ import { getData as getFeatured } from './api/featured';
 import { getData as getProjects } from './api/projects';
 
 import { Layout } from 'layout';
-import { About, Hero, Featured, Projects } from 'sections';
+import { About, Hero, Featured, Projects, Contact } from 'sections';
 import { IProject, IFeaturedProject } from 'types';
 
 type Props = {
@@ -19,6 +19,7 @@ const Home: NextPage<Props> = ({ projects, featuredProjects }) => {
       <About />
       <Featured projects={featuredProjects} />
       <Projects projects={projects} />
+      <Contact />
     </Layout>
   );
 };
