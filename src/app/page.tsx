@@ -2,112 +2,117 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="mx-auto max-w-2xl px-6 py-16 sm:py-24">
-      {/* Header */}
-      <header className="mb-12">
-        <h1 className="text-2xl font-medium tracking-tight">Your Name</h1>
-        <p className="mt-1 text-muted">Software Engineer</p>
-      </header>
+    <>
+      {/* Animated background */}
+      <div className="bg-lines pointer-events-none fixed inset-0 -z-10" />
 
-      {/* About */}
-      <section className="mb-12">
-        <p className="text-foreground/90 leading-relaxed">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente at
-          nisi harum praesentium deserunt a accusamus quia ducimus incidunt
-          beatae, libero assumenda recusandae nesciunt repellat dolorum atque,
-          error fugit vero.
-        </p>
-      </section>
+      <main className="relative mx-auto max-w-3xl px-6 py-16 sm:py-24">
+        {/* Header */}
+        <header className="mb-12">
+          <h1 className="text-2xl font-medium tracking-tight">Your Name</h1>
+          <p className="mt-1 text-muted">Software Engineer</p>
+        </header>
 
-      {/* Projects */}
-      <section className="mb-12">
-        <h2 className="mb-6 text-sm font-medium uppercase tracking-wide text-muted">
-          Projects
-        </h2>
-        <div className="space-y-6">
-          <ProjectCard
-            title="Project One"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit."
-            image="/project-placeholder.svg"
-            tech={["React", "TypeScript", "Node.js"]}
-            href="https://github.com/you/project"
-          />
-          <ProjectCard
-            title="Project Two"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit."
-            image="/project-placeholder.svg"
-            tech={["Next.js", "PostgreSQL", "Tailwind"]}
-            href="https://github.com/you/project"
-          />
-          <ProjectCard
-            title="Project Three"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit."
-            image="/project-placeholder.svg"
-            tech={["Python", "FastAPI", "Redis"]}
-            href="https://github.com/you/project"
-          />
-        </div>
-      </section>
+        {/* About */}
+        <section className="mb-12">
+          <p className="text-foreground/90 leading-relaxed">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente
+            at nisi harum praesentium deserunt a accusamus quia ducimus incidunt
+            beatae, libero assumenda recusandae nesciunt repellat dolorum atque,
+            error fugit vero.
+          </p>
+        </section>
 
-      {/* Experience */}
-      <section className="mb-12">
-        <h2 className="mb-6 text-sm font-medium uppercase tracking-wide text-muted">
-          Experience
-        </h2>
-        <div className="relative border-l border-border pl-6">
-          <ExperienceItem
-            title="Senior Engineer"
-            company="Company Name"
-            period="2022 – Present"
-            description="Led development of core platform features. Mentored junior engineers and established code review practices."
-          />
-          <ExperienceItem
-            title="Software Engineer"
-            company="Previous Co"
-            period="2019 – 2022"
-            description="Built and maintained customer-facing APIs. Improved system performance and reduced latency by 40%."
-          />
-          <ExperienceItem
-            title="Junior Developer"
-            company="First Job Inc"
-            period="2017 – 2019"
-            description="Developed internal tools and contributed to frontend features. Learned production-grade development practices."
-            isLast
-          />
-        </div>
-      </section>
+        {/* Projects */}
+        <section className="mb-12">
+          <h2 className="mb-6 text-sm font-medium uppercase tracking-wide text-muted">
+            Projects
+          </h2>
+          <div className="grid gap-6 sm:grid-cols-2">
+            <ProjectCard
+              title="Project One"
+              description="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+              image="/project-placeholder.svg"
+              tech={["React", "TypeScript", "Node.js"]}
+              href="https://github.com/you/project"
+            />
+            <ProjectCard
+              title="Project Two"
+              description="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+              image="/project-placeholder.svg"
+              tech={["Next.js", "PostgreSQL", "Tailwind"]}
+              href="https://github.com/you/project"
+            />
+            <ProjectCard
+              title="Project Three"
+              description="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+              image="/project-placeholder.svg"
+              tech={["Python", "FastAPI", "Redis"]}
+              href="https://github.com/you/project"
+            />
+          </div>
+        </section>
 
-      {/* Links */}
-      <section>
-        <h2 className="mb-4 text-sm font-medium uppercase tracking-wide text-muted">
-          Links
-        </h2>
-        <div className="flex gap-6 text-sm">
-          <a
-            href="mailto:you@email.com"
-            className="transition-colors hover:text-foreground"
-          >
-            Email
-          </a>
-          <a
-            href="https://github.com/you"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors hover:text-foreground"
-          >
-            GitHub
-          </a>
-          <a
-            href="https://linkedin.com/in/you"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors hover:text-foreground"
-          >
-            LinkedIn
-          </a>
-        </div>
-      </section>
-    </main>
+        {/* Experience */}
+        <section className="mb-12">
+          <h2 className="mb-6 text-sm font-medium uppercase tracking-wide text-muted">
+            Experience
+          </h2>
+          <div className="relative border-l border-border pl-6">
+            <ExperienceItem
+              title="Senior Engineer"
+              company="Company Name"
+              period="2022 – Present"
+              description="Led development of core platform features. Mentored junior engineers and established code review practices."
+            />
+            <ExperienceItem
+              title="Software Engineer"
+              company="Previous Co"
+              period="2019 – 2022"
+              description="Built and maintained customer-facing APIs. Improved system performance and reduced latency by 40%."
+            />
+            <ExperienceItem
+              title="Junior Developer"
+              company="First Job Inc"
+              period="2017 – 2019"
+              description="Developed internal tools and contributed to frontend features. Learned production-grade development practices."
+              isLast
+            />
+          </div>
+        </section>
+
+        {/* Links */}
+        <section>
+          <h2 className="mb-4 text-sm font-medium uppercase tracking-wide text-muted">
+            Links
+          </h2>
+          <div className="flex gap-6 text-sm">
+            <a
+              href="mailto:you@email.com"
+              className="transition-colors hover:text-foreground"
+            >
+              Email
+            </a>
+            <a
+              href="https://github.com/you"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-foreground"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://linkedin.com/in/you"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-foreground"
+            >
+              LinkedIn
+            </a>
+          </div>
+        </section>
+      </main>
+    </>
   );
 }
 
