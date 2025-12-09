@@ -4,10 +4,10 @@ export default function Home() {
   return (
     <>
       {/* Animated background */}
-      <div className="bg-lines pointer-events-none fixed inset-0 -z-10" />
+      <div className="bg-lines pointer-events-none absolute left-0 top-0 -z-10 h-screen w-full" />
 
       <main className="relative mx-auto max-w-3xl px-6 py-16 sm:py-24">
-        <header className="mb-12">
+        <header className="mb-8">
           <h1 className="text-2xl font-medium tracking-tight">
             Miguel Rodriguez
           </h1>

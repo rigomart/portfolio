@@ -62,9 +62,24 @@ a:hover {
   color: var(--accent);
 }
 
+@property --glow-position {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+@keyframes glow-sweep {
+  0% {
+    --glow-position: -30%;
+  }
+  100% {
+    --glow-position: 130%;
+  }
+}
+
 .bg-lines {
-  --grid-size: 10px;
-  --line-color: rgba(255, 255, 255, 0.1);
+  --grid-size: 12px;
+  --line-color: rgba(255, 255, 255, 0.2);
 
   background: repeating-linear-gradient(
     90deg,
@@ -72,5 +87,24 @@ a:hover {
     transparent calc(var(--grid-size) - 1px),
     var(--line-color) var(--grid-size)
   );
-  clip-path: polygon(0 0, 33% 0, 22% 24%, 0 40%);
+  mask: radial-gradient(
+    ellipse 40% 100% at var(--glow-position) 50%,
+    black,
+    transparent
+  );
+  clip-path: polygon(
+    0 0,
+    50% 0,
+    46% 6%,
+    39% 4%,
+    33% 12%,
+    29% 9%,
+    24% 22%,
+    19% 16%,
+    15% 26%,
+    10% 22%,
+    6% 45%,
+    0 60%
+  );
+  animation: glow-sweep 4s ease-in-out infinite;
 }
