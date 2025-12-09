@@ -7,9 +7,10 @@ export default function Home() {
       <div className="bg-lines pointer-events-none fixed inset-0 -z-10" />
 
       <main className="relative mx-auto max-w-3xl px-6 py-16 sm:py-24">
-        {/* Header */}
         <header className="mb-12">
-          <h1 className="text-2xl font-medium tracking-tight">Your Name</h1>
+          <h1 className="text-2xl font-medium tracking-tight">
+            Miguel Rodriguez
+          </h1>
           <p className="mt-1 text-muted">Software Engineer</p>
         </header>
 
@@ -180,7 +181,7 @@ function ExperienceItem({
   return (
     <div className={`relative ${isLast ? "" : "pb-6"}`}>
       {/* Timeline dot */}
-      <div className="absolute -left-6 top-1.5 size-2 rounded-full bg-muted" />
+      <div className="absolute -left-7 top-2 size-2 rounded-full bg-muted" />
 
       <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
         <div>

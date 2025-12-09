@@ -64,13 +64,13 @@ a:hover {
 
 .bg-lines {
   --grid-size: 10px;
-  --line: rgba(255, 255, 255, 0.05);
+  --line-color: rgba(255, 255, 255, 0.1);
 
   background: repeating-linear-gradient(
     90deg,
     transparent 0,
     transparent calc(var(--grid-size) - 1px),
-    var(--line) var(--grid-size)
+    var(--line-color) var(--grid-size)
   );
-  clip-path: polygon(0 0, 36% 0, 22% 24%, 0 40%);
+  clip-path: polygon(0 0, 33% 0, 22% 24%, 0 40%);
 }
