@@ -7,7 +7,7 @@ export default function Home() {
       <div className="bg-lines pointer-events-none absolute left-0 top-0 -z-10 h-screen w-full" />
 
       <main className="relative mx-auto max-w-3xl px-6 py-16 sm:py-24">
-        <header className="mb-8">
+        <header className="mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
           <h1 className="text-2xl font-medium tracking-tight">
             Miguel Rodriguez
           </h1>
@@ -15,17 +15,41 @@ export default function Home() {
         </header>
 
         {/* About */}
-        <section className="mb-12">
-          <p className="text-foreground/90 leading-relaxed">
+        <section className="mb-12 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100">
+          <p className="mb-6 text-foreground/90 leading-relaxed">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente
             at nisi harum praesentium deserunt a accusamus quia ducimus incidunt
             beatae, libero assumenda recusandae nesciunt repellat dolorum atque,
             error fugit vero.
           </p>
+          <div className="flex gap-6 text-sm">
+            <a
+              href="mailto:you@email.com"
+              className="transition-colors hover:text-foreground"
+            >
+              Email
+            </a>
+            <a
+              href="https://github.com/you"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-foreground"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://linkedin.com/in/you"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-foreground"
+            >
+              LinkedIn
+            </a>
+          </div>
         </section>
 
         {/* Projects */}
-        <section className="mb-12">
+        <section className="mb-12 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">
           <h2 className="mb-6 text-sm font-medium uppercase tracking-wide text-muted">
             Projects
           </h2>
@@ -55,7 +79,7 @@ export default function Home() {
         </section>
 
         {/* Experience */}
-        <section className="mb-12">
+        <section className="mb-12 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
           <h2 className="mb-6 text-sm font-medium uppercase tracking-wide text-muted">
             Experience
           </h2>
@@ -83,35 +107,6 @@ export default function Home() {
         </section>
 
         {/* Links */}
-        <section>
-          <h2 className="mb-4 text-sm font-medium uppercase tracking-wide text-muted">
-            Links
-          </h2>
-          <div className="flex gap-6 text-sm">
-            <a
-              href="mailto:you@email.com"
-              className="transition-colors hover:text-foreground"
-            >
-              Email
-            </a>
-            <a
-              href="https://github.com/you"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition-colors hover:text-foreground"
-            >
-              GitHub
-            </a>
-            <a
-              href="https://linkedin.com/in/you"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition-colors hover:text-foreground"
-            >
-              LinkedIn
-            </a>
-          </div>
-        </section>
       </main>
     </>
   );
@@ -135,7 +130,7 @@ function ProjectCard({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group block overflow-hidden rounded-lg border border-border bg-surface transition-colors hover:border-muted"
+      className="group block overflow-hidden rounded-lg border border-border bg-surface transition-all duration-300 hover:-translate-y-1 hover:border-muted"
     >
       <div className="relative aspect-video overflow-hidden bg-surface-inset">
         <Image
