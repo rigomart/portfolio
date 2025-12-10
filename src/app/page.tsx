@@ -22,10 +22,10 @@ export default function Home() {
             beatae, libero assumenda recusandae nesciunt repellat dolorum atque,
             error fugit vero.
           </p>
-          <div className="flex gap-6 text-sm">
+          <div className="flex gap-3 text-sm">
             <a
               href="mailto:you@email.com"
-              className="transition-colors hover:text-foreground"
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface border border-border transition-colors hover:border-accent hover:text-accent"
             >
               Email
             </a>
@@ -33,7 +33,7 @@ export default function Home() {
               href="https://github.com/you"
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-colors hover:text-foreground"
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface border border-border transition-colors hover:border-accent hover:text-accent"
             >
               GitHub
             </a>
@@ -41,7 +41,7 @@ export default function Home() {
               href="https://linkedin.com/in/you"
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-colors hover:text-foreground"
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface border border-border transition-colors hover:border-accent hover:text-accent"
             >
               LinkedIn
             </a>
@@ -105,8 +105,6 @@ export default function Home() {
             />
           </div>
         </section>
-
-        {/* Links */}
       </main>
     </>
   );
