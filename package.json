@@ -5,9 +5,7 @@
   "scripts": {
     "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
     "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
-    "start": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
-    "astro": "ASTRO_TELEMETRY_DISABLED=1 astro",
     "lint": "biome check --write",
     "check-types": "tsc --noEmit"
   },
