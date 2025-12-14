@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  title: string;
+  description: string;
+  imageSrc: string;
+  imageWidth: number;
+  imageHeight: number;
+  tech: string[];
+  href: string;
+}
+
+const { title, description, imageSrc, imageWidth, imageHeight, tech, href } =
+  Astro.props as Props;
+---
+
+<a
+  href={href}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="group block overflow-hidden rounded-lg border border-border bg-surface transition-all duration-300 hover:-translate-y-1 hover:border-muted"
+>
+  <div class="relative aspect-video overflow-hidden bg-surface-inset">
+    <Image
+      src={imageSrc}
+      alt={title}
+      width={imageWidth}
+      height={imageHeight}
+      loading="lazy"
+      decoding="async"
+      class="absolute inset-0 h-full w-full object-cover opacity-90 transition-opacity group-hover:opacity-100"
+    />
+  </div>
+  <div class="p-4">
+    <h3 class="font-medium transition-colors group-hover:text-accent">{title}</h3>
+    <p class="mt-1 text-sm leading-relaxed text-muted">{description}</p>
+    <div class="mt-3 flex flex-wrap gap-2">
+      {tech.map((t) => (
+        <span class="rounded bg-surface-hover px-2 py-0.5 text-xs text-muted">
+          {t}
+        </span>
+      ))}
+    </div>
+  </div>
+</a>

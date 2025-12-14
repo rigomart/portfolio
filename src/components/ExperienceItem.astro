@@ -1,0 +1,31 @@
+---
+interface Props {
+  title: string;
+  company: string;
+  period: string;
+  description: string;
+  isLast?: boolean;
+}
+
+const {
+  title,
+  company,
+  period,
+  description,
+  isLast = false,
+} = Astro.props as Props;
+---
+
+<div class={`relative ${isLast ? "" : "pb-6"}`}>
+  <div class="absolute -left-7 top-2 size-2 rounded-full bg-muted" />
+
+  <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+    <div>
+      <span class="font-medium">{title}</span>
+      <span class="mx-2 text-muted">·</span>
+      <span class="text-muted">{company}</span>
+    </div>
+    <span class="shrink-0 text-sm text-muted">{period}</span>
+  </div>
+  <p class="mt-2 text-sm leading-relaxed text-muted">{description}</p>
+</div>
