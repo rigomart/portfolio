@@ -1,138 +1,80 @@
 ---
 import ExperienceItem from "../components/ExperienceItem.astro";
 import ProjectCard from "../components/ProjectCard.astro";
+import { experiences, projects } from "../data";
 import BaseLayout from "../layouts/BaseLayout.astro";
-
-const projects = [
-  {
-    title: "Project One",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    imageSrc: "/project-placeholder.svg",
-    imageWidth: 1600,
-    imageHeight: 900,
-    tech: ["React", "TypeScript", "Node.js"],
-    href: "https://github.com/you/project",
-  },
-  {
-    title: "Project Two",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    imageSrc: "/project-placeholder.svg",
-    imageWidth: 1600,
-    imageHeight: 900,
-    tech: ["Next.js", "PostgreSQL", "Tailwind"],
-    href: "https://github.com/you/project",
-  },
-  {
-    title: "Project Three",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    imageSrc: "/project-placeholder.svg",
-    imageWidth: 1600,
-    imageHeight: 900,
-    tech: ["Python", "FastAPI", "Redis"],
-    href: "https://github.com/you/project",
-  },
-];
-
-const experiences = [
-  {
-    title: "Senior Engineer",
-    company: "Company Name",
-    period: "2022 – Present",
-    description:
-      "Led development of core platform features. Mentored junior engineers and established code review practices.",
-  },
-  {
-    title: "Software Engineer",
-    company: "Previous Co",
-    period: "2019 – 2022",
-    description:
-      "Built and maintained customer-facing APIs. Improved system performance and reduced latency by 40%.",
-  },
-  {
-    title: "Junior Developer",
-    company: "First Job Inc",
-    period: "2017 – 2019",
-    description:
-      "Developed internal tools and contributed to frontend features. Learned production-grade development practices.",
-  },
-];
 ---
 
 <BaseLayout>
-  <div class="bg-lines pointer-events-none absolute left-0 top-0 -z-10 h-screen w-full" />
+  <div
+    class='bg-lines pointer-events-none absolute left-0 top-0 -z-10 h-screen w-full'
+  >
+  </div>
 
-  <main class="relative mx-auto max-w-3xl px-6 py-16 sm:py-24">
-    <header class="mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
-      <h1 class="text-2xl font-medium tracking-tight">Miguel Rodriguez</h1>
-      <p class="mt-1 text-muted">Software Engineer</p>
+  <main class='relative mx-auto max-w-3xl px-6 py-16 sm:py-24'>
+    <header class='mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700'>
+      <h1 class='text-2xl font-medium tracking-tight'>Miguel Rodriguez</h1>
+      <p class='mt-1 text-muted'>Software Engineer</p>
     </header>
 
-    <section class="mb-12 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100">
-      <p class="mb-6 text-foreground/90 leading-relaxed">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente at nisi
-        harum praesentium deserunt a accusamus quia ducimus incidunt beatae,
-        libero assumenda recusandae nesciunt repellat dolorum atque, error fugit
-        vero.
+    <section
+      class='mb-12 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100'
+    >
+      <p class='mb-6 text-foreground/90 leading-relaxed'>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente at
+        nisi harum praesentium deserunt a accusamus quia ducimus incidunt
+        beatae, libero assumenda recusandae nesciunt repellat dolorum atque,
+        error fugit vero.
       </p>
-      <div class="flex gap-3 text-sm">
+      <div class='flex gap-3 text-sm'>
         <a
-          href="mailto:you@email.com"
-          class="inline-flex items-center gap-2 rounded-full bg-surface px-3 py-1 border border-border transition-colors hover:border-accent hover:text-accent"
+          href='mailto:you@email.com'
+          class='inline-flex items-center gap-2 rounded-full bg-surface px-3 py-1 border border-border transition-colors hover:border-accent hover:text-accent'
         >
           Email
         </a>
         <a
-          href="https://github.com/you"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 rounded-full bg-surface px-3 py-1 border border-border transition-colors hover:border-accent hover:text-accent"
+          href='https://github.com/you'
+          target='_blank'
+          rel='noopener noreferrer'
+          class='inline-flex items-center gap-2 rounded-full bg-surface px-3 py-1 border border-border transition-colors hover:border-accent hover:text-accent'
         >
           GitHub
         </a>
         <a
-          href="https://linkedin.com/in/you"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 rounded-full bg-surface px-3 py-1 border border-border transition-colors hover:border-accent hover:text-accent"
+          href='https://linkedin.com/in/you'
+          target='_blank'
+          rel='noopener noreferrer'
+          class='inline-flex items-center gap-2 rounded-full bg-surface px-3 py-1 border border-border transition-colors hover:border-accent hover:text-accent'
         >
           LinkedIn
         </a>
       </div>
     </section>
 
-    <section class="mb-12 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">
-      <h2 class="mb-6 text-sm font-medium uppercase tracking-wide text-muted">
+    <section
+      class='mb-12 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200'
+    >
+      <h2 class='mb-6 text-sm font-medium uppercase tracking-wide text-muted'>
         Projects
       </h2>
-      <div class="grid gap-6 sm:grid-cols-2">
-        {projects.map((project) => (
-          <ProjectCard
-            title={project.title}
-            description={project.description}
-            imageSrc={project.imageSrc}
-            imageWidth={project.imageWidth}
-            imageHeight={project.imageHeight}
-            tech={project.tech}
-            href={project.href}
-          />
-        ))}
+      <div class='grid gap-6 sm:grid-cols-2'>
+        {projects.map((project) => <ProjectCard project={project} />)}
       </div>
     </section>
 
-    <section class="mb-12 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
-      <h2 class="mb-6 text-sm font-medium uppercase tracking-wide text-muted">
+    <section
+      class='mb-12 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300'
+    >
+      <h2 class='mb-6 text-sm font-medium uppercase tracking-wide text-muted'>
         Experience
       </h2>
-      <div class="relative border-l border-border pl-6">
-        {experiences.map((experience, index) => (
-          <ExperienceItem
-            title={experience.title}
-            company={experience.company}
-            period={experience.period}
-            description={experience.description}
-            isLast={index === experiences.length - 1}
-          />
-        ))}
+      <div class='relative border-l border-border pl-6'>
+        {
+          experiences.map((experience, index) => (
+            <ExperienceItem experience={experience} />
+          ))
+        }
       </div>
     </section>
   </main>

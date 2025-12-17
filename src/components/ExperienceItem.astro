@@ -1,31 +1,33 @@
 ---
-interface Props {
+type Experience = {
   title: string;
   company: string;
   period: string;
   description: string;
   isLast?: boolean;
-}
+};
 
-const {
-  title,
-  company,
-  period,
-  description,
-  isLast = false,
-} = Astro.props as Props;
+type Props = {
+  experience: Experience;
+};
+
+const { experience } = Astro.props;
 ---
 
-<div class={`relative ${isLast ? "" : "pb-6"}`}>
-  <div class="absolute -left-7 top-2 size-2 rounded-full bg-muted" />
+<div class={`relative ${experience.isLast ? "" : "pb-6"}`}>
+  <div class='absolute -left-7 top-2 size-2 rounded-full bg-muted'></div>
 
-  <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+  <div
+    class='flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4'
+  >
     <div>
-      <span class="font-medium">{title}</span>
-      <span class="mx-2 text-muted">·</span>
-      <span class="text-muted">{company}</span>
+      <span class='font-medium'>{experience.title}</span>
+      <span class='mx-2 text-muted'>·</span>
+      <span class='text-muted'>{experience.company}</span>
     </div>
-    <span class="shrink-0 text-sm text-muted">{period}</span>
+    <span class='shrink-0 text-sm text-muted'>{experience.period}</span>
   </div>
-  <p class="mt-2 text-sm leading-relaxed text-muted">{description}</p>
+  <p class='mt-2 text-sm leading-relaxed text-muted'>
+    {experience.description}
+  </p>
 </div>
