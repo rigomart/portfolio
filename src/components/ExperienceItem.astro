@@ -15,7 +15,10 @@ const { experience } = Astro.props;
 ---
 
 <div class={`relative ${experience.isLast ? "" : "pb-6"}`}>
-  <div class='absolute -left-7 top-2 size-2 rounded-full bg-muted'></div>
+  <div
+    class='timeline-dot absolute -left-7 top-2 size-2 rounded-full bg-muted text-muted'
+  >
+  </div>
 
   <div
     class='flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4'
@@ -25,7 +28,9 @@ const { experience } = Astro.props;
       <span class='mx-2 text-muted'>·</span>
       <span class='text-muted'>{experience.company}</span>
     </div>
-    <span class='shrink-0 text-sm text-muted'>{experience.period}</span>
+    <span class='shrink-0 font-mono text-xs text-muted'
+      >{experience.period}</span
+    >
   </div>
   <p class='mt-2 text-sm leading-relaxed text-muted'>
     {experience.description}

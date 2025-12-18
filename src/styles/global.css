@@ -63,49 +63,129 @@ a:hover {
   color: var(--accent);
 }
 
-@property --glow-position {
+@property --sweep-x {
   syntax: "<percentage>";
   inherits: false;
-  initial-value: 0%;
+  initial-value: -30%;
 }
 
-@keyframes glow-sweep {
-  0% {
-    --glow-position: -30%;
-  }
+@keyframes sweep {
+  0%,
   100% {
-    --glow-position: 130%;
+    --sweep-x: -30%;
+  }
+  50% {
+    --sweep-x: 130%;
   }
 }
 
 .bg-lines {
-  --grid-size: 12px;
-  --line-color: rgba(255, 255, 255, 0.2);
+  --line-gap: 24px;
+  --line-color: rgba(255, 255, 255, 0.025);
+}
 
-  background: repeating-linear-gradient(
+.bg-lines::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
     90deg,
-    transparent 0,
-    transparent calc(var(--grid-size) - 1px),
-    var(--line-color) var(--grid-size)
+    var(--line-color) 0 1px,
+    transparent 1px var(--line-gap)
   );
-  mask: radial-gradient(
-    ellipse 40% 100% at var(--glow-position) 50%,
-    black,
-    transparent
+  mask-image: linear-gradient(to top, black 0%, transparent 40%);
+}
+
+.bg-lines::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.04) 0 1px,
+    transparent 1px var(--line-gap)
   );
-  clip-path: polygon(
-    0 0,
-    50% 0,
-    46% 6%,
-    39% 4%,
-    33% 12%,
-    29% 9%,
-    24% 22%,
-    19% 16%,
-    15% 26%,
-    10% 22%,
-    6% 45%,
-    0 60%
+  mask-image: radial-gradient(
+    ellipse 40% 70% at var(--sweep-x) 100%,
+    black 0%,
+    transparent 40%
   );
-  animation: glow-sweep 4s ease-in-out infinite;
+  animation: sweep 10s ease-in-out infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+.timeline-dot {
+  position: relative;
+}
+
+.timeline-dot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: currentColor;
+  animation: pulse-ring 1.5s ease-out infinite;
+}
+
+.card-glow {
+  position: relative;
+}
+
+.card-glow::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.card-glow:hover::before {
+  opacity: 1;
+}
+
+.card-glow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.card-glow:hover::after {
+  opacity: 1;
+}
+
+.cursor-spotlight {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cursor-spotlight.active {
+  opacity: 1;
 }

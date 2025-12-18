@@ -13,16 +13,17 @@ type Project = {
 
 type Props = {
   project: Project;
+  eager?: boolean;
 };
 
-const { project } = Astro.props;
+const { project, eager = false } = Astro.props;
 ---
 
 <a
   href={project.href}
   target='_blank'
   rel='noopener noreferrer'
-  class='group block overflow-hidden rounded-lg border border-border bg-surface transition-all duration-300 hover:-translate-y-1 hover:border-muted'
+  class='card-glow group block overflow-hidden rounded-lg border border-border bg-surface transition-all duration-300 hover:border-muted'
 >
   <div class='relative aspect-video overflow-hidden bg-surface-inset'>
     <Image
@@ -30,8 +31,9 @@ const { project } = Astro.props;
       alt={project.title}
       width={project.imageWidth}
       height={project.imageHeight}
-      loading='lazy'
-      decoding='async'
+      loading={eager ? "eager" : "lazy"}
+      decoding={eager ? "sync" : "async"}
+      fetchpriority={eager ? "high" : undefined}
       class='absolute inset-0 h-full w-full object-cover opacity-90 transition-opacity group-hover:opacity-100'
     />
   </div>
@@ -43,7 +45,7 @@ const { project } = Astro.props;
     <div class='mt-3 flex flex-wrap gap-2'>
       {
         project.tech.map((t) => (
-          <span class='rounded bg-surface-hover px-2 py-0.5 text-xs text-muted'>
+          <span class='rounded bg-surface-hover px-2 py-0.5 font-mono text-xs text-muted'>
             {t}
           </span>
         ))
