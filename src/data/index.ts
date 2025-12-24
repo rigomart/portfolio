@@ -10,31 +10,38 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "Project One",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    title: "Phonaria",
+    description:
+      "Pronunciation learning tool that combines grapheme‑to‑phoneme transcription, an interactive IPA chart, and phoneme contrast guidance in a single responsive workspace, backed by a typed phonetics data package.",
     imageSrc: "/project-placeholder.svg",
-    imageWidth: 1600,
-    imageHeight: 900,
-    tech: ["React", "TypeScript", "Node.js"],
-    href: "https://github.com/you/project",
+    imageWidth: 1200,
+    imageHeight: 675,
+    tech: [
+      "Next.js",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "TanStack Query",
+      "Redis",
+      "Turborepo",
+    ],
+    href: "https://github.com/rigomart/phonaria",
   },
   {
-    title: "Project Two",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    title: "Planteria",
+    description:
+      "AI planning app for developers that turns product ideas into structured, shippable plans with strict criteria and realtime syncing. Includes a read‑only MCP server for integration with any AI agent.",
     imageSrc: "/project-placeholder.svg",
-    imageWidth: 1600,
-    imageHeight: 900,
-    tech: ["Next.js", "PostgreSQL", "Tailwind"],
-    href: "https://github.com/you/project",
-  },
-  {
-    title: "Project Three",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    imageSrc: "/project-placeholder.svg",
-    imageWidth: 1600,
-    imageHeight: 900,
-    tech: ["Python", "FastAPI", "Redis"],
-    href: "https://github.com/you/project",
+    imageWidth: 1200,
+    imageHeight: 675,
+    tech: [
+      "Next.js",
+      "Convex",
+      "OpenAI SDK",
+      "Better Auth",
+      "MCP",
+      "Firecrawl",
+    ],
+    href: "https://github.com/rigomart/planteria",
   },
 ];
 
@@ -66,11 +73,10 @@ export const experiences: Experience[] = [
     tags: ["Microfrontends", "Modernization", "Architecture", "CI/CD"],
     stack: [
       "React",
-      "TypeScript",
       "Rsbuild",
-      "Module Federation",
+      "TanStack Query & Router",
       "Tailwind CSS",
-      "Code Maat",
+      "Module Federation",
     ],
   },
   {
@@ -86,6 +92,6 @@ export const experiences: Experience[] = [
       "Shipped core product flows (payments, registration) during a legacy CMS to Next.js migration.",
     ],
     tags: ["Next.js", "Migration", "DevOps", "Documentation"],
-    stack: ["React", "Next.js", "TypeScript", "Azure DevOps", "Docusaurus"],
+    stack: ["Next.js", "Tailwind CSS", "Azure DevOps", "Docusaurus"],
   },
 ];

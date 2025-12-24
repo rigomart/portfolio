@@ -33,7 +33,7 @@ const { experience } = Astro.props;
       experience.tags && experience.tags.length > 0 && (
         <div class='flex flex-wrap gap-2'>
           {experience.tags.map((tag) => (
-            <span class='rounded-full bg-secondary/50 px-2.5 py-0.5 text-xs font-medium text-secondary-foreground'>
+            <span class='rounded-full border border-border/50 bg-surface-inset px-2.5 py-0.5 text-xs font-medium tracking-tight text-accent transition-colors hover:border-accent/30 hover:bg-surface-hover'>
               {tag}
             </span>
           ))}
@@ -55,7 +55,7 @@ const { experience } = Astro.props;
       experience.stack.length > 0 && (
         <div class='flex flex-wrap gap-2 pt-2'>
           {experience.stack.map((t) => (
-            <span class='rounded bg-surface-hover px-2 py-0.5 font-mono text-[10px] text-muted'>
+            <span class='rounded bg-surface-hover px-2 py-0.5 font-mono text-xs text-muted'>
               {t}
             </span>
           ))}
