@@ -1,4 +1,14 @@
-export const projects = [
+export type Project = {
+  title: string;
+  description: string;
+  imageSrc: string;
+  imageWidth: number;
+  imageHeight: number;
+  tech: string[];
+  href: string;
+};
+
+export const projects: Project[] = [
   {
     title: "Project One",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
@@ -28,26 +38,54 @@ export const projects = [
   },
 ];
 
-export const experiences = [
+export type Experience = {
+  title: string;
+  company: string;
+  period: {
+    start: string;
+    end: string;
+  };
+  highlights: string[];
+  tags: string[];
+  stack: string[];
+};
+
+export const experiences: Experience[] = [
   {
-    title: "Senior Engineer",
-    company: "Company Name",
-    period: "2022 – Present",
-    description:
-      "Led development of core platform features. Mentored junior engineers and established code review practices.",
+    title: "Front-End Architect",
+    company: "Sofftek - Pacifico Seguros",
+    period: {
+      start: "2024",
+      end: "2025",
+    },
+    highlights: [
+      "Led the company’s first microfrontend initiative (Module Federation) and cross-team coordination.",
+      "Owned frontend delivery and modernization (linting, types, refactoring) alongside production support.",
+      "Shipped critical migrations: React 19, Tailwind 4, and Rsbuild.",
+    ],
+    tags: ["Microfrontends", "Modernization", "Architecture", "CI/CD"],
+    stack: [
+      "React",
+      "TypeScript",
+      "Rsbuild",
+      "Module Federation",
+      "Tailwind CSS",
+      "Code Maat",
+    ],
   },
   {
-    title: "Software Engineer",
-    company: "Previous Co",
-    period: "2019 – 2022",
-    description:
-      "Built and maintained customer-facing APIs. Improved system performance and reduced latency by 40%.",
-  },
-  {
-    title: "Junior Developer",
-    company: "First Job Inc",
-    period: "2017 – 2019",
-    description:
-      "Developed internal tools and contributed to frontend features. Learned production-grade development practices.",
+    title: "Senior Front-End Developer",
+    company: "Atlantic City",
+    period: {
+      start: "2022",
+      end: "2023",
+    },
+    highlights: [
+      "Drove platform improvements: Next.js Pages → App Router, Azure DevOps pipelines, and internal docs.",
+      "Helped scale the frontend team by introducing branching workflows and engineering standards.",
+      "Shipped core product flows (payments, registration) during a legacy CMS to Next.js migration.",
+    ],
+    tags: ["Next.js", "Migration", "DevOps", "Documentation"],
+    stack: ["React", "Next.js", "TypeScript", "Azure DevOps", "Docusaurus"],
   },
 ];

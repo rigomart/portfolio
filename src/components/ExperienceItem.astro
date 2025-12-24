@@ -1,11 +1,5 @@
 ---
-type Experience = {
-  title: string;
-  company: string;
-  period: string;
-  description: string;
-  isLast?: boolean;
-};
+import type { Experience } from "@/data";
 
 type Props = {
   experience: Experience;
@@ -14,25 +8,62 @@ type Props = {
 const { experience } = Astro.props;
 ---
 
-<div class={`relative ${experience.isLast ? "" : "pb-6"}`}>
-  <div
-    class='timeline-dot absolute -left-7 top-2 size-2 rounded-full bg-muted text-muted'
-  >
+<div class='flex gap-3'>
+  <div class='flex flex-col items-center justify-center'>
+    <div class='timeline-dot size-2 rounded-full bg-border border-l mt-2.5'>
+    </div>
+    <div class='w-px bg-border/50 grow my-2'></div>
   </div>
 
-  <div
-    class='flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4'
-  >
-    <div>
-      <span class='font-medium'>{experience.title}</span>
-      <span class='mx-2 text-muted'>·</span>
-      <span class='text-muted'>{experience.company}</span>
-    </div>
-    <span class='shrink-0 font-mono text-xs text-muted'
-      >{experience.period}</span
+  <div class='flex flex-col gap-3 pb-8 grow'>
+    <div
+      class='flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4'
     >
+      <div>
+        <span class='font-medium text-base'>{experience.title}</span>
+        <span class='mx-2 text-muted'>·</span>
+        <span class='text-muted font-mono text-xs'>{experience.company}</span>
+      </div>
+      <span class='shrink-0 font-mono text-xs text-muted'
+        >{experience.period.start} - {experience.period.end}</span
+      >
+    </div>
+
+    {/* Focus Tags */}
+    {
+      experience.tags && experience.tags.length > 0 && (
+        <div class='flex flex-wrap gap-2'>
+          {experience.tags.map((tag) => (
+            <span class='rounded-full bg-secondary/50 px-2.5 py-0.5 text-xs font-medium text-secondary-foreground'>
+              {tag}
+            </span>
+          ))}
+        </div>
+      )
+    }
+
+    {/* Highlights */}
+    <ul class='flex list-disc flex-col gap-1.5 list-inside mt-2'>
+      {
+        experience.highlights.map((highlight) => (
+          <li class='text-sm leading-relaxed text-foreground/80'>
+            {highlight}
+          </li>
+        ))
+      }
+    </ul>
+
+    {/* Tech Stack */}
+    {
+      experience.stack.length > 0 && (
+        <div class='flex flex-wrap gap-2 pt-2 opacity-70 hover:opacity-100 transition-opacity'>
+          {experience.stack.map((t) => (
+            <span class='rounded bg-surface-hover px-2 py-0.5 font-mono text-[10px] text-muted'>
+              {t}
+            </span>
+          ))}
+        </div>
+      )
+    }
   </div>
-  <p class='mt-2 text-sm leading-relaxed text-muted'>
-    {experience.description}
-  </p>
 </div>
