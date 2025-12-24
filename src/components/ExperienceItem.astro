@@ -9,10 +9,10 @@ const { experience } = Astro.props;
 ---
 
 <div class='flex gap-3'>
-  <div class='flex flex-col items-center justify-center'>
-    <div class='timeline-dot size-2 rounded-full bg-border border-l mt-2.5'>
+  <div class='flex flex-col items-center justify-center relative top-2'>
+    <div class='timeline-dot size-2 rounded-full bg-muted text-muted border-l'>
     </div>
-    <div class='w-px bg-border/50 grow my-2'></div>
+    <div class='w-px bg-border grow'></div>
   </div>
 
   <div class='flex flex-col gap-3 pb-8 grow'>
@@ -29,7 +29,6 @@ const { experience } = Astro.props;
       >
     </div>
 
-    {/* Focus Tags */}
     {
       experience.tags && experience.tags.length > 0 && (
         <div class='flex flex-wrap gap-2'>
@@ -42,7 +41,6 @@ const { experience } = Astro.props;
       )
     }
 
-    {/* Highlights */}
     <ul class='flex list-disc flex-col gap-1.5 list-inside mt-2'>
       {
         experience.highlights.map((highlight) => (
@@ -53,10 +51,9 @@ const { experience } = Astro.props;
       }
     </ul>
 
-    {/* Tech Stack */}
     {
       experience.stack.length > 0 && (
-        <div class='flex flex-wrap gap-2 pt-2 opacity-70 hover:opacity-100 transition-opacity'>
+        <div class='flex flex-wrap gap-2 pt-2'>
           {experience.stack.map((t) => (
             <span class='rounded bg-surface-hover px-2 py-0.5 font-mono text-[10px] text-muted'>
               {t}

@@ -35,3 +35,4 @@ bun run check-types  # TypeScript typecheck
 - Run `bun run lint` after every code change; fix or explain any findings.
 - Update `README.md` when you adjust project structure, workflows, or setup steps in a meaningful way.
 - Keep diffs small and scoped to one concern to ease reviews.
+- DO NOT run the dev environment. Assume the dev environment is already running in an external terminal.
