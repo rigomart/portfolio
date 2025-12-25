@@ -1,8 +1,8 @@
- ---
+---
 import { Image } from "astro:assets";
-import Github from "./icons/Github.astro";
-import ExternalLink from "./icons/ExternalLink.astro";
 import type { Project } from "../data";
+import ExternalLink from "./icons/ExternalLink.astro";
+import Github from "./icons/Github.astro";
 
 type Props = {
   project: Project;
@@ -29,8 +29,14 @@ const { project, eager = false } = Astro.props;
       loading={eager ? "eager" : "lazy"}
       decoding={eager ? "sync" : "async"}
       fetchpriority={eager ? "high" : undefined}
-      class='absolute inset-0 h-full w-full object-cover opacity-90 transition-all duration-400 ease-out group-hover:scale-105 group-hover:opacity-100'
+      class='absolute inset-0 h-full w-full object-cover opacity-90 transition-opacity duration-400 ease-out group-hover:opacity-100'
     />
+    <div
+      class='absolute inset-0 z-10 flex items-center justify-center gap-2 bg-background/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100'
+    >
+      <span class='text-sm font-medium text-foreground'>Visit Website</span>
+      <ExternalLink class='size-4 text-foreground' />
+    </div>
   </a>
   <div class='flex grow flex-col p-4'>
     <div class='mb-2 flex items-center justify-between gap-2'>

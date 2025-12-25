@@ -1,24 +1,28 @@
- ---
+---
 import ExperienceItem from "../components/ExperienceItem.astro";
+import ArrowRight from "../components/icons/ArrowRight.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import SocialLinks from "../components/SocialLinks.astro";
 import { experiences, projects } from "../data";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ArrowRight from "../components/icons/ArrowRight.astro";
 ---
 
 <BaseLayout>
   <main class='relative mx-auto max-w-4xl px-6 py-16 sm:py-24'>
     <header class='mb-8 animate-fade-in-blur'>
-      <div class='flex items-center justify-between'>
-        <h1 class='text-2xl font-medium tracking-tight'>Miguel Rodriguez</h1>
+      <div
+        class='flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between'
+      >
+        <h1 class='text-3xl font-bold tracking-tighter sm:text-4xl'>
+          Miguel Rodriguez
+        </h1>
         <SocialLinks />
       </div>
-      <p class='mt-1 text-muted'>Full Stack Engineer</p>
+      <p class='mt-2 font-mono text-sm text-muted'>Full Stack Engineer</p>
     </header>
 
     <section class='mb-12 animate-fade-in-blur delay-100'>
-      <p class='text-foreground/90 leading-relaxed'>
+      <p class='text-lg leading-relaxed text-foreground/90'>
         I build full-stack applications with a strong focus on frontend.
         Shipping pragmatically with type-safe foundations, intuitive UI, and
         maintainable systems. Lately I’ve been exploring linguistics/phonetics
@@ -53,7 +57,9 @@ import ArrowRight from "../components/icons/ArrowRight.astro";
           class='group inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-foreground'
         >
           <span>See more on GitHub</span>
-          <ArrowRight class="transition-transform duration-300 group-hover:translate-x-1" />
+          <ArrowRight
+            class='transition-transform duration-300 group-hover:translate-x-1'
+          />
         </a>
       </div>
     </section>
