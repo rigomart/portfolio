@@ -5,7 +5,10 @@ export type Project = {
   imageWidth: number;
   imageHeight: number;
   tech: string[];
-  href: string;
+  links: {
+    repo: string;
+    demo: string;
+  };
 };
 
 export const projects: Project[] = [
@@ -24,7 +27,10 @@ export const projects: Project[] = [
       "Redis",
       "Turborepo",
     ],
-    href: "https://github.com/rigomart/phonaria",
+    links: {
+      repo: "https://github.com/rigomart/phonaria",
+      demo: "https://phonaria.app",
+    },
   },
   {
     title: "Planteria",
@@ -41,7 +47,10 @@ export const projects: Project[] = [
       "MCP",
       "Firecrawl",
     ],
-    href: "https://github.com/rigomart/planteria",
+    links: {
+      repo: "https://github.com/rigomart/planteria",
+      demo: "https://planteria.app",
+    },
   },
 ];
 
