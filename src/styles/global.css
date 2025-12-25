@@ -150,57 +150,6 @@ a:hover {
   animation: pulse-ring 1.5s ease-out infinite;
 }
 
-.card-glow {
-  position: relative;
-}
-
-.card-glow::before {
-  content: "";
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.1) 0%,
-    transparent 50%,
-    rgba(255, 255, 255, 0.05) 100%
-  );
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.card-glow:hover::before {
-  opacity: 1;
-}
-
-.card-glow::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  box-shadow: 0 0 40px rgba(255, 255, 255, 0.03);
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  pointer-events: none;
-}
-
-.card-glow:hover::after {
-  opacity: 1;
-}
-
-.hover-glow-pop {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.hover-glow-pop:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.1);
-  color: var(--foreground);
-}
-
 .cursor-spotlight {
   position: fixed;
   inset: 0;
