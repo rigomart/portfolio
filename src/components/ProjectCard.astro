@@ -14,7 +14,7 @@ const { project, eager = false } = Astro.props;
   href={project.href}
   target='_blank'
   rel='noopener noreferrer'
-  class='card-glow group flex h-full flex-col overflow-hidden rounded-lg border border-border bg-surface transition-all duration-300 hover:border-muted'
+  class='card-glow group flex h-full flex-col overflow-hidden rounded-lg border border-border bg-surface transition-all duration-500 hover:-translate-y-0.5'
 >
   <div class='relative aspect-video overflow-hidden bg-surface-inset'>
     <Image
@@ -25,11 +25,13 @@ const { project, eager = false } = Astro.props;
       loading={eager ? "eager" : "lazy"}
       decoding={eager ? "sync" : "async"}
       fetchpriority={eager ? "high" : undefined}
-      class='absolute inset-0 h-full w-full object-cover opacity-90 transition-opacity group-hover:opacity-100'
+      class='absolute inset-0 h-full w-full object-cover opacity-90 transition-all duration-700 ease-out group-hover:scale-[1.03] group-hover:opacity-100'
     />
   </div>
   <div class='flex grow flex-col p-4'>
-    <h3 class='font-medium transition-colors group-hover:text-accent'>
+    <h3
+      class='font-medium transition-colors duration-300 group-hover:text-accent'
+    >
       {project.title}
     </h3>
     <p class='mt-1 grow text-sm leading-relaxed text-muted'>
