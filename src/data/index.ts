@@ -1,3 +1,22 @@
+export const socialLinks = [
+  {
+    name: "GitHub",
+    href: "https://github.com/rigomart",
+  },
+  {
+    name: "X (Twitter)",
+    href: "https://x.com/rigomart",
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/mrodriguezto/",
+  },
+  {
+    name: "Email",
+    href: "mailto:mirdor.dev@gmail.com",
+  },
+];
+
 export type Project = {
   title: string;
   description: string;
@@ -22,7 +41,7 @@ export const projects: Project[] = [
     tech: ["Next.js", "Tailwind CSS", "shadcn/ui", "TanStack Query", "Redis"],
     links: {
       repo: "https://github.com/rigomart/phonaria",
-      demo: "https://phonaria.app",
+      demo: "https://phonaria.rigos.dev",
     },
   },
   {
@@ -42,7 +61,7 @@ export const projects: Project[] = [
     ],
     links: {
       repo: "https://github.com/rigomart/planteria",
-      demo: "https://planteria.app",
+      demo: "https://planteria-web.vercel.app/",
     },
   },
 ];

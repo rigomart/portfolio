@@ -1,28 +1,11 @@
 ---
-interface Props {
+import { socialLinks } from "../data";
+
+type Props = {
   className?: string;
-}
+};
 
 const { className = "" } = Astro.props;
-
-const socialLinks = [
-  {
-    name: "Email",
-    href: "mailto:mirdor.dev@gmail.com",
-  },
-  {
-    name: "GitHub",
-    href: "https://github.com/rigomart",
-  },
-  {
-    name: "LinkedIn",
-    href: "https://linkedin.com/in/you",
-  },
-  {
-    name: "X (Twitter)",
-    href: "https://x.com/rigomart",
-  },
-];
 ---
 
 <div class={`flex items-center gap-3 ${className}`}>
