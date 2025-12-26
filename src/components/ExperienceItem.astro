@@ -1,0 +1,71 @@
+---
+import type { Experience } from "@/data";
+
+type Props = {
+  experience: Experience;
+};
+
+const { experience } = Astro.props;
+---
+
+<div class='group flex gap-3'>
+  <div class='flex flex-col items-center justify-center relative top-2'>
+    <div
+      class='timeline-dot size-2 rounded-full border border-muted bg-muted text-muted transition-all duration-300 group-hover:scale-125 group-hover:border-foreground group-hover:bg-foreground group-hover:text-foreground/20 group-hover:shadow-[0_0_10px_currentColor]'
+    >
+    </div>
+    <div
+      class='w-px grow bg-border transition-colors duration-300 group-hover:bg-muted/50'
+    >
+    </div>
+  </div>
+
+  <div class='flex grow flex-col gap-3 pb-8'>
+    <div
+      class='flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4'
+    >
+      <div>
+        <span class='font-medium text-base'>{experience.title}</span>
+        <span class='mx-2 text-muted'>·</span>
+        <span class='text-muted font-mono text-xs'>{experience.company}</span>
+      </div>
+      <span class='shrink-0 font-mono text-xs text-muted'
+        >{experience.period.start} - {experience.period.end}</span
+      >
+    </div>
+
+    {
+      experience.tags && experience.tags.length > 0 && (
+        <div class='flex flex-wrap gap-2'>
+          {experience.tags.map((tag) => (
+            <span class='rounded border border-border/60 bg-surface-inset px-2.5 py-0.5 text-xs font-medium tracking-tight text-accent transition-colors'>
+              {tag}
+            </span>
+          ))}
+        </div>
+      )
+    }
+
+    <ul class='flex list-disc flex-col gap-1.5 list-inside mt-2'>
+      {
+        experience.highlights.map((highlight) => (
+          <li class='text-sm leading-relaxed text-foreground/80'>
+            {highlight}
+          </li>
+        ))
+      }
+    </ul>
+
+    {
+      experience.stack.length > 0 && (
+        <div class='flex flex-wrap gap-2 pt-2'>
+          {experience.stack.map((t) => (
+            <span class='rounded bg-surface-hover px-2 py-0.5 font-mono text-xs text-muted'>
+              {t}
+            </span>
+          ))}
+        </div>
+      )
+    }
+  </div>
+</div>

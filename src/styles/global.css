@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+:root {
+  /* Base colors */
+  --background: #0c0c0c;
+  --foreground: #e5e5e5;
+  --muted: #737373;
+  --border: #262626;
+  --accent: #a3a3a3;
+
+  /* Semantic surfaces */
+  --surface: #111111;
+  --surface-hover: #1a1a1a;
+  --surface-inset: #0a0a0a;
+
+  /* Spacing tokens */
+  --timeline-offset: 1.5rem;
+  --timeline-dot-size: 0.5rem;
+  --fade-in-blur: fade-in-blur 0.4s ease-out both;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-surface-inset: var(--surface-inset);
+  --font-sans: var(--font-open-sans);
+  --font-mono: var(--font-geist-mono);
+  --animate-fade-in-blur: var(--fade-in-blur);
+}
+
+@keyframes fade-in-blur {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+@property --sweep-x {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: -30%;
+}
+
+@keyframes sweep {
+  0%,
+  100% {
+    --sweep-x: -30%;
+  }
+  50% {
+    --sweep-x: 130%;
+  }
+}
+
+.bg-lines {
+  --line-gap: 24px;
+  --line-color: rgba(255, 255, 255, 0.025);
+}
+
+.bg-lines::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--line-color) 0 1px,
+    transparent 1px var(--line-gap)
+  );
+  mask-image: linear-gradient(to top, black 0%, transparent 40%);
+}
+
+.bg-lines::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.04) 0 1px,
+    transparent 1px var(--line-gap)
+  );
+  mask-image: radial-gradient(
+    ellipse 40% 70% at var(--sweep-x) 100%,
+    black 0%,
+    transparent 40%
+  );
+  animation: sweep 10s ease-in-out infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+.timeline-dot {
+  position: relative;
+}
+
+.timeline-dot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: currentColor;
+  animation: pulse-ring 1.5s ease-out infinite;
+}
+
+.cursor-spotlight {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cursor-spotlight.active {
+  opacity: 1;
+}

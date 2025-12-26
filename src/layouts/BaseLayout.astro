@@ -1,0 +1,69 @@
+---
+import "../styles/global.css";
+import { Font } from "astro:assets";
+
+type Props = {
+  title?: string;
+  description?: string;
+};
+
+const {
+  title = "Miguel Rodriguez | Software Engineer",
+  description = "Full Stack Engineer building type-safe applications with focus on frontend. Experienced in React, Next.js, and modern web architectures.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang='en' class='dark'>
+  <head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='description' content={description} />
+    <meta name='generator' content={Astro.generator} />
+    <link rel='icon' href='/favicon.ico' sizes='any' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <link rel='canonical' href={new URL(Astro.url.pathname, Astro.site)} />
+    <Font cssVariable='--font-open-sans' preload />
+    <Font cssVariable='--font-geist-mono' preload />
+    <title>{title}</title>
+
+    <meta property='og:title' content={title} />
+    <meta property='og:description' content={description} />
+    <meta property='og:type' content='website' />
+    <meta property='og:url' content={new URL(Astro.url.pathname, Astro.site)} />
+    <meta property='og:image' content='/og-image-placeholder.png' />
+    <meta property='og:image:alt' content='Miguel Rodriguez Portfolio' />
+
+    <meta name='twitter:card' content='summary_large_image' />
+    <meta name='twitter:title' content={title} />
+    <meta name='twitter:description' content={description} />
+    <meta name='twitter:image' content='/og-image-placeholder.png' />
+
+    <script
+      type='application/ld+json'
+      is:inline
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: "Miguel Rodriguez",
+        jobTitle: "Full Stack Engineer",
+        url: "https://github.com/rigomart",
+        description: description,
+        knowsAbout: [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Full-Stack Development",
+          "Frontend Architecture",
+          "Microfrontends",
+          "AI-Assisted Development",
+        ],
+        sameAs: ["https://github.com/rigomart"],
+      })}
+    />
+  </head>
+  <body class='relative min-h-screen'>
+    <slot />
+  </body>
+</html>

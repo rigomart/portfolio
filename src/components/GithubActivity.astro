@@ -1,0 +1,67 @@
+---
+interface Contribution {
+  date: string;
+  count: number;
+  level: 0 | 1 | 2 | 3 | 4;
+}
+
+interface Response {
+  contributions: Contribution[];
+}
+
+interface Props {
+  weeks?: number;
+}
+
+const { weeks } = Astro.props;
+
+let contributions: Contribution[] = [];
+
+try {
+  const response = await fetch(
+    "https://github-contributions-api.jogruber.de/v4/rigomart?y=last",
+  );
+  const data = (await response.json()) as Response;
+  contributions = data.contributions;
+
+  if (weeks) {
+    const daysToTake = weeks * 7;
+    contributions = contributions.slice(-daysToTake);
+  }
+} catch (e) {
+  console.error("Failed to fetch GitHub contributions:", e);
+  // Fallback to empty grid to prevent crash, preserving layout
+  const days = weeks ? weeks * 7 : 365;
+  contributions = Array.from({ length: days }).map(() => ({
+    date: "",
+    count: 0,
+    level: 0,
+  }));
+}
+
+const getLevelColor = (level: number) => {
+  switch (level) {
+    case 1:
+      return "bg-muted/40";
+    case 2:
+      return "bg-muted/60";
+    case 3:
+      return "bg-foreground/80";
+    case 4:
+      return "bg-foreground";
+    default:
+      return "bg-muted/20";
+  }
+};
+---
+
+<div class='animate-fade-in grid grid-rows-7 grid-flow-col gap-1 w-max mx-auto'>
+  {
+    contributions.map((day) => (
+      <div
+        class={`size-2 rounded-sm ${getLevelColor(day.level)}`}
+        title={day.date ? `${day.date}: ${day.count} contributions` : ""}
+      />
+    ))
+  }
+</div>

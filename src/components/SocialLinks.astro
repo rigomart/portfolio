@@ -1,0 +1,30 @@
+---
+import { socialLinks } from "../data";
+
+type Props = {
+  className?: string;
+};
+
+const { className = "" } = Astro.props;
+---
+
+<div class={`flex items-center gap-3 ${className}`}>
+  {
+    socialLinks.map((link, index) => (
+      <>
+        <a
+          href={link.href}
+          target={link.name !== "Email" ? "_blank" : undefined}
+          rel={link.name !== "Email" ? "noopener noreferrer" : undefined}
+          class='font-mono text-xs text-muted transition-colors duration-200 hover:text-foreground'
+          aria-label={link.name}
+        >
+          {link.name}
+        </a>
+        {index < socialLinks.length - 1 && (
+          <span class='text-xs text-muted/40 select-none'>/</span>
+        )}
+      </>
+    ))
+  }
+</div>

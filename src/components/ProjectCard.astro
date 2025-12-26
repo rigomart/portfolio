@@ -1,0 +1,80 @@
+---
+import { Image } from "astro:assets";
+import type { Project } from "../data";
+import ExternalLink from "./icons/ExternalLink.astro";
+import Github from "./icons/Github.astro";
+
+type Props = {
+  project: Project;
+  eager?: boolean;
+};
+
+const { project, eager = false } = Astro.props;
+---
+
+<div
+  class='group relative flex h-full flex-col overflow-hidden rounded-md border border-border bg-surface transition-all duration-300 hover:border-muted/50'
+>
+  <a
+    href={project.links.demo}
+    target='_blank'
+    rel='noopener noreferrer'
+    class='relative aspect-5/2 block overflow-hidden bg-surface-inset'
+  >
+    <Image
+      src={project.imageSrc}
+      alt={project.title}
+      width={project.imageWidth}
+      height={project.imageHeight}
+      loading={eager ? "eager" : "lazy"}
+      decoding={eager ? "sync" : "async"}
+      fetchpriority={eager ? "high" : undefined}
+      class='absolute inset-0 h-full w-full object-cover opacity-90 transition-opacity duration-400 ease-out group-hover:opacity-100'
+    />
+    <div
+      class='absolute inset-0 z-10 flex items-center justify-center gap-2 bg-background/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100'
+    >
+      <span class='text-sm font-medium text-foreground'>Visit Website</span>
+      <ExternalLink class='size-4 text-foreground' />
+    </div>
+  </a>
+  <div class='flex grow flex-col p-4'>
+    <div class='mb-2 flex items-center justify-between gap-2'>
+      <h3 class='font-medium text-foreground'>
+        {project.title}
+      </h3>
+      <div class='flex gap-2'>
+        <a
+          href={project.links.repo}
+          target='_blank'
+          rel='noopener noreferrer'
+          aria-label='GitHub Repository'
+          class='text-muted transition-colors hover:text-foreground'
+        >
+          <Github />
+        </a>
+        <a
+          href={project.links.demo}
+          target='_blank'
+          rel='noopener noreferrer'
+          aria-label='Live Demo'
+          class='text-muted transition-colors hover:text-foreground'
+        >
+          <ExternalLink />
+        </a>
+      </div>
+    </div>
+    <p class='mb-4 grow text-sm leading-relaxed text-muted'>
+      {project.description}
+    </p>
+    <div class='flex flex-wrap gap-2'>
+      {
+        project.tech.map((t) => (
+          <span class='rounded bg-surface-hover px-2 py-0.5 font-mono text-xs text-muted'>
+            {t}
+          </span>
+        ))
+      }
+    </div>
+  </div>
+</div>
