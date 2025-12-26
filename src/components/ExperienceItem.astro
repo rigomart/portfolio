@@ -38,7 +38,7 @@ const { experience } = Astro.props;
       experience.tags && experience.tags.length > 0 && (
         <div class='flex flex-wrap gap-2'>
           {experience.tags.map((tag) => (
-            <span class='rounded-full border border-border/50 bg-surface-inset px-2.5 py-0.5 text-xs font-medium tracking-tight text-accent transition-colors hover:border-accent/30 hover:bg-surface-hover'>
+            <span class='rounded border border-border/60 bg-surface-inset px-2.5 py-0.5 text-xs font-medium tracking-tight text-accent transition-colors'>
               {tag}
             </span>
           ))}

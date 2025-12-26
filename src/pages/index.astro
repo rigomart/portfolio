@@ -15,30 +15,42 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <main class='relative mx-auto max-w-4xl px-6 py-16 sm:py-24'>
     <header class='mb-8 animate-fade-in-blur'>
       <div
-        class='flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between'
+        class='flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between'
       >
-        <h1 class='text-3xl font-semibold tracking-tighter sm:text-4xl'>
-          Miguel Rodriguez
-        </h1>
-        <SocialLinks />
+        <!-- Left Column: Identity -->
+        <div class='flex flex-col gap-2'>
+          <h1 class='text-2xl font-semibold tracking-tighter sm:text-4xl'>
+            Miguel Rodriguez
+          </h1>
+          <p class='font-mono text-sm text-muted'>Full Stack Engineer</p>
+          <div class='mt-1'>
+            <SocialLinks />
+          </div>
+        </div>
+
+        <!-- Right Column: Activity -->
+        <a
+          href='https://github.com/rigomart'
+          target='_blank'
+          rel='noopener noreferrer'
+          class='hidden sm:block opacity-40 hover:opacity-100 transition-opacity'
+          aria-label='View GitHub Profile'
+        >
+          <GithubActivity server:defer weeks={30}>
+            <GithubActivitySkeleton slot='fallback' weeks={30} />
+          </GithubActivity>
+        </a>
       </div>
-      <p class='mt-2 font-mono text-sm text-muted'>Full Stack Engineer</p>
     </header>
 
     <section class='mb-12 animate-fade-in-blur delay-100'>
-      <p class='text-lg leading-relaxed text-foreground/90'>
-        I build full-stack applications with a strong focus on frontend.
-        Shipping pragmatically with type-safe foundations, intuitive UI, and
-        maintainable systems. Lately I’ve been exploring linguistics/phonetics
-        and AI-assisted developer workflows.
+      <p class='text-base leading-relaxed text-foreground/90'>
+        I’m a Full Stack Engineer who loves bridging product design with systems
+        thinking. My work revolves around shipping pragmatic, resilient
+        applications where user experience meets code quality. Lately, I’ve been
+        exploring the intersection of linguistics, phonetics, and AI.
       </p>
     </section>
-
-    <div class='mb-12 animate-fade-in-blur delay-150'>
-      <GithubActivity server:defer>
-        <GithubActivitySkeleton slot='fallback' />
-      </GithubActivity>
-    </div>
 
     <section class='mb-12 animate-fade-in-blur delay-200'>
       <h2

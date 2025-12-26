@@ -1,9 +1,13 @@
 ---
-const emptyDays = Array.from({ length: 365 });
+interface Props {
+  weeks?: number;
+}
+
+const { weeks } = Astro.props;
+const days = weeks ? weeks * 7 : 365;
+const emptyDays = Array.from({ length: days });
 ---
 
-<div
-  class='flex flex-wrap justify-center gap-1 max-w-3xl mx-auto animate-pulse'
->
+<div class='grid grid-rows-7 grid-flow-col gap-1 w-max mx-auto animate-pulse'>
   {emptyDays.map(() => <div class='size-2 rounded-sm bg-muted/20' />)}
 </div>
