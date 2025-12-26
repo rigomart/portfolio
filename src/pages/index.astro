@@ -1,9 +1,6 @@
 ---
-export const prerender = false;
-
 import ExperienceItem from "../components/ExperienceItem.astro";
 import GithubActivity from "../components/GithubActivity.astro";
-import GithubActivitySkeleton from "../components/GithubActivitySkeleton.astro";
 import ArrowRight from "../components/icons/ArrowRight.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import SocialLinks from "../components/SocialLinks.astro";
@@ -36,9 +33,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           class='hidden sm:block opacity-40 hover:opacity-100 transition-opacity'
           aria-label='View GitHub Profile'
         >
-          <GithubActivity server:defer weeks={30}>
-            <GithubActivitySkeleton slot='fallback' weeks={30} />
-          </GithubActivity>
+          <GithubActivity weeks={30} />
         </a>
       </div>
     </header>
