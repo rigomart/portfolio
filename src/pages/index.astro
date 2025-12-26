@@ -1,5 +1,9 @@
 ---
+export const prerender = false;
+
 import ExperienceItem from "../components/ExperienceItem.astro";
+import GithubActivity from "../components/GithubActivity.astro";
+import GithubActivitySkeleton from "../components/GithubActivitySkeleton.astro";
 import ArrowRight from "../components/icons/ArrowRight.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import SocialLinks from "../components/SocialLinks.astro";
@@ -13,7 +17,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <div
         class='flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between'
       >
-        <h1 class='text-3xl font-bold tracking-tighter sm:text-4xl'>
+        <h1 class='text-3xl font-semibold tracking-tighter sm:text-4xl'>
           Miguel Rodriguez
         </h1>
         <SocialLinks />
@@ -29,6 +33,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         and AI-assisted developer workflows.
       </p>
     </section>
+
+    <div class='mb-12 animate-fade-in-blur delay-150'>
+      <GithubActivity server:defer>
+        <GithubActivitySkeleton slot='fallback' />
+      </GithubActivity>
+    </div>
 
     <section class='mb-12 animate-fade-in-blur delay-200'>
       <h2

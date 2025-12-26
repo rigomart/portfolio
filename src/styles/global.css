@@ -16,6 +16,7 @@
   /* Spacing tokens */
   --timeline-offset: 1.5rem;
   --timeline-dot-size: 0.5rem;
+  --fade-in-blur: fade-in-blur;
 }
 
 @theme inline {
@@ -29,7 +30,7 @@
   --color-surface-inset: var(--surface-inset);
   --font-sans: var(--font-open-sans);
   --font-mono: var(--font-geist-mono);
-  --animate-fade-in-blur: fade-in-blur 0.4s ease-out both;
+  --animation-fade-in-blur: var(--fade-in-blur);
 }
 
 * {

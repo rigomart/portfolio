@@ -2,15 +2,15 @@
 import "../styles/global.css";
 import { Font } from "astro:assets";
 
-interface Props {
+type Props = {
   title?: string;
   description?: string;
-}
+};
 
 const {
   title = "Miguel Rodriguez | Software Engineer",
   description = "Full Stack Engineer building type-safe applications with focus on frontend. Experienced in React, Next.js, and modern web architectures.",
-} = Astro.props as Props;
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -39,25 +39,29 @@ const {
     <meta name='twitter:description' content={description} />
     <meta name='twitter:image' content='/og-image-placeholder.png' />
 
-    <script type="application/ld+json" is:inline set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Miguel Rodriguez",
-      "jobTitle": "Full Stack Engineer",
-      "url": "https://github.com/rigomart",
-      "description": description,
-      "knowsAbout": [
-        "React",
-        "Next.js",
-        "TypeScript",
-        "Tailwind CSS",
-        "Full-Stack Development",
-        "Frontend Architecture",
-        "Microfrontends",
-        "AI-Assisted Development"
-      ],
-      "sameAs": ["https://github.com/rigomart"]
-    })}></script>
+    <script
+      type='application/ld+json'
+      is:inline
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: "Miguel Rodriguez",
+        jobTitle: "Full Stack Engineer",
+        url: "https://github.com/rigomart",
+        description: description,
+        knowsAbout: [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Full-Stack Development",
+          "Frontend Architecture",
+          "Microfrontends",
+          "AI-Assisted Development",
+        ],
+        sameAs: ["https://github.com/rigomart"],
+      })}
+    />
   </head>
   <body class='relative min-h-screen'>
     <slot />

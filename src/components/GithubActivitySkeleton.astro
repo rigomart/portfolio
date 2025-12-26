@@ -1,0 +1,9 @@
+---
+const emptyDays = Array.from({ length: 365 });
+---
+
+<div
+  class='flex flex-wrap justify-center gap-1 max-w-3xl mx-auto animate-pulse'
+>
+  {emptyDays.map(() => <div class='size-2 rounded-sm bg-muted/20' />)}
+</div>

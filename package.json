@@ -10,6 +10,7 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
+    "@astrojs/vercel": "^9.0.2",
     "astro": "^5.16.5"
   },
   "devDependencies": {
