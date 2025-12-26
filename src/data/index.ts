@@ -35,9 +35,9 @@ export const projects: Project[] = [
     title: "Phonaria",
     description:
       "Pronunciation learning tool that combines grapheme‑to‑phoneme transcription, an interactive IPA chart, and phoneme contrast guidance in a single responsive workspace, backed by a typed phonetics data package.",
-    imageSrc: "/project-placeholder.svg",
-    imageWidth: 1200,
-    imageHeight: 675,
+    imageSrc: "/phonaria-landing.png",
+    imageWidth: 900,
+    imageHeight: 500,
     tech: ["Next.js", "Tailwind CSS", "shadcn/ui", "TanStack Query", "Redis"],
     links: {
       repo: "https://github.com/rigomart/phonaria",
@@ -48,9 +48,9 @@ export const projects: Project[] = [
     title: "Planteria",
     description:
       "AI planning app for developers that turns product ideas into structured, shippable plans with strict criteria and realtime syncing. Includes a read‑only MCP server for integration with any AI agent.",
-    imageSrc: "/project-placeholder.svg",
+    imageSrc: "/planteria-landing.png",
     imageWidth: 1200,
-    imageHeight: 675,
+    imageHeight: 500,
     tech: [
       "Next.js",
       "Convex",
