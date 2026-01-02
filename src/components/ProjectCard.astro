@@ -6,10 +6,10 @@ import Github from "./icons/Github.astro";
 
 type Props = {
   project: Project;
-  eager?: boolean;
+  priority?: boolean;
 };
 
-const { project, eager = false } = Astro.props;
+const { project, priority = false } = Astro.props;
 ---
 
 <div
@@ -24,11 +24,8 @@ const { project, eager = false } = Astro.props;
     <Image
       src={project.imageSrc}
       alt={project.title}
-      width={project.imageWidth}
-      height={project.imageHeight}
-      loading={eager ? "eager" : "lazy"}
-      decoding={eager ? "sync" : "async"}
-      fetchpriority={eager ? "high" : undefined}
+      priority={priority}
+      layout='full-width'
       class='absolute inset-0 h-full w-full object-cover opacity-90 transition-opacity duration-400 ease-out group-hover:opacity-100'
     />
     <div

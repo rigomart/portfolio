@@ -1,3 +1,8 @@
+import type { ImageMetadata } from "astro";
+import phonariaImage from "../assets/phonaria-landing.png";
+import planteriaImage from "../assets/planteria-landing.png";
+import placeholderImage from "../assets/project-placeholder.svg";
+
 export const socialLinks = [
   {
     name: "GitHub",
@@ -5,7 +10,7 @@ export const socialLinks = [
   },
   {
     name: "X (Twitter)",
-    href: "https://x.com/rigomart",
+    href: "https://x.com/rigomart_",
   },
   {
     name: "LinkedIn",
@@ -20,9 +25,7 @@ export const socialLinks = [
 export type Project = {
   title: string;
   description: string;
-  imageSrc: string;
-  imageWidth: number;
-  imageHeight: number;
+  imageSrc: ImageMetadata;
   tech: string[];
   links: {
     repo: string;
@@ -35,22 +38,18 @@ export const projects: Project[] = [
     title: "Phonaria",
     description:
       "Pronunciation learning tool that combines grapheme‑to‑phoneme transcription, an interactive IPA chart, and phoneme contrast guidance in a single responsive workspace, backed by a typed phonetics data package.",
-    imageSrc: "/phonaria-landing.png",
-    imageWidth: 900,
-    imageHeight: 500,
-    tech: ["Next.js", "Tailwind CSS", "shadcn/ui", "TanStack Query", "Redis"],
+    imageSrc: phonariaImage,
+    tech: ["Next.js", "TanStack Query", "Redis", "oRPC", "Drizzle", "Neon"],
     links: {
       repo: "https://github.com/rigomart/phonaria",
-      demo: "https://phonaria.rigos.dev",
+      demo: "https://phonaria.rigos.dev", 
     },
   },
   {
     title: "Planteria",
     description:
       "AI planning app for developers that turns product ideas into structured, shippable plans with strict criteria and realtime syncing. Includes a read‑only MCP server for integration with any AI agent.",
-    imageSrc: "/planteria-landing.png",
-    imageWidth: 1200,
-    imageHeight: 500,
+    imageSrc: planteriaImage,
     tech: [
       "Next.js",
       "Convex",
@@ -64,6 +63,16 @@ export const projects: Project[] = [
       demo: "https://planteria-web.vercel.app/",
     },
   },
+  {
+    title: "Deppulse",
+    description: "Quickly assess whether an open-source project is actively maintained.",
+    imageSrc: placeholderImage,
+    tech: ["Next.js","Server Actions", "Github API", "Drizzle", "Neon"],
+    links: {
+      repo: "https://github.com/rigomart/deppulse",
+      demo: "https://deppulse.rigos.dev",
+    },
+  }
 ];
 
 export type Experience = {
