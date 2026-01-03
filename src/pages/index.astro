@@ -60,24 +60,34 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               class='flex animate-fade-in-blur'
               style={`animation-delay: ${100 + index * 100}ms`}
             >
-              <ProjectCard project={project} priority={index < 4} />
+              <ProjectCard project={project} priority={index < 2} />
             </div>
           ))
         }
-      </div>
-
-      <div class='mt-8 flex justify-center'>
-        <a
-          href='https://github.com/rigomart'
-          target='_blank'
-          rel='noopener noreferrer'
-          class='group inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-foreground'
+        <div
+          class='flex animate-fade-in-blur'
+          style={`animation-delay: ${100 + projects.length * 100}ms`}
         >
-          <span>See more on GitHub</span>
-          <ArrowRight
-            class='transition-transform duration-300 group-hover:translate-x-1'
-          />
-        </a>
+          <a
+            href='https://github.com/rigomart'
+            target='_blank'
+            rel='noopener noreferrer'
+            class='group flex h-full w-full flex-col items-center justify-center gap-4 rounded-md border border-dashed border-muted bg-surface/30 p-6 transition-all duration-300 hover:border-foreground/20 hover:bg-surface-hover'
+            aria-label='See more on GitHub'
+          >
+            <div
+              class='rounded-full bg-surface p-4 transition-colors group-hover:bg-background'
+            >
+              <ArrowRight
+                class='size-6 text-muted transition-colors group-hover:text-foreground'
+              />
+            </div>
+            <span
+              class='font-medium text-muted transition-colors group-hover:text-foreground'
+              >See more on GitHub</span
+            >
+          </a>
+        </div>
       </div>
     </section>
 
