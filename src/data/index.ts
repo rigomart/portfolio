@@ -1,7 +1,7 @@
 import type { ImageMetadata } from "astro";
 import phonariaImage from "../assets/phonaria-landing.png";
 import planteriaImage from "../assets/planteria-landing.png";
-import placeholderImage from "../assets/project-placeholder.svg";
+import deppulseImage from "../assets/deppulse.png";
 
 export const socialLinks = [
   {
@@ -66,7 +66,7 @@ export const projects: Project[] = [
   {
     title: "Deppulse",
     description: "Quickly assess whether an open-source project is actively maintained.",
-    imageSrc: placeholderImage,
+    imageSrc: deppulseImage,
     tech: ["Next.js","Server Actions", "Github API", "Drizzle", "Neon"],
     links: {
       repo: "https://github.com/rigomart/deppulse",
