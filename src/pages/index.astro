@@ -10,7 +10,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <BaseLayout>
   <main class='relative mx-auto max-w-4xl px-6 py-16 sm:py-24'>
-    <header class='mb-8 animate-fade-in-blur'>
+    <header class='mb-8 animate-fade-in-blur delay-75'>
       <div
         class='flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between'
       >
@@ -30,7 +30,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           href='https://github.com/rigomart'
           target='_blank'
           rel='noopener noreferrer'
-          class='hidden sm:block opacity-40 hover:opacity-100 transition-opacity'
+          class='hidden sm:block opacity-50 hover:opacity-100 transition-opacity'
           aria-label='View GitHub Profile'
         >
           <GithubActivity weeks={30} />
@@ -60,24 +60,34 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               class='flex animate-fade-in-blur'
               style={`animation-delay: ${100 + index * 100}ms`}
             >
-              <ProjectCard project={project} eager={index < 4} />
+              <ProjectCard project={project} priority={index < 2} />
             </div>
           ))
         }
-      </div>
-
-      <div class='mt-8 flex justify-center'>
-        <a
-          href='https://github.com/rigomart'
-          target='_blank'
-          rel='noopener noreferrer'
-          class='group inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-foreground'
+        <div
+          class='flex animate-fade-in-blur'
+          style={`animation-delay: ${100 + projects.length * 100}ms`}
         >
-          <span>See more on GitHub</span>
-          <ArrowRight
-            class='transition-transform duration-300 group-hover:translate-x-1'
-          />
-        </a>
+          <a
+            href='https://github.com/rigomart'
+            target='_blank'
+            rel='noopener noreferrer'
+            class='group flex h-full w-full flex-col items-center justify-center gap-4 rounded-md border border-dashed border-muted/40 bg-surface/50 p-6 transition-all duration-200 hover:border-foreground/20 hover:bg-surface/70'
+            aria-label='See more on GitHub'
+          >
+            <div
+              class='rounded-full bg-surface p-4 transition-colors group-hover:bg-background'
+            >
+              <ArrowRight
+                class='size-4 text-muted transition-colors group-hover:text-foreground'
+              />
+            </div>
+            <span
+              class='font-medium text-muted transition-colors group-hover:text-foreground text-sm'
+              >See more on GitHub</span
+            >
+          </a>
+        </div>
       </div>
     </section>
 
@@ -102,6 +112,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </section>
   </main>
 
+  <div
+    class='bg-scanlines pointer-events-none absolute top-0 left-0 -z-10 h-[60vh] w-full'
+  >
+  </div>
   <div
     class='bg-lines pointer-events-none absolute bottom-0 left-0 -z-10 h-[50vh] w-full'
   >
