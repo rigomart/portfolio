@@ -114,7 +114,7 @@ export const experiences: Experience[] = [
     company: "Atlantic City",
     period: {
       start: "Dec 2022",
-      end: "Nov 2023",
+      end: "Nov 2024",
     },
     highlights: [
       "Led the full-stack migration of core financial modules (Payments, Deposits, Balances, Bonuses) from legacy CMS to Next.js, coordinating on-site with vendor teams in Madrid.",
