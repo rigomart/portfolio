@@ -18,15 +18,6 @@ export default defineConfig({
         weights: ["400 600"],
         styles: ["normal"],
       },
-      {
-        name: "Geist Mono",
-        cssVariable: "--font-geist-mono",
-        fallbacks: ["monospace"],
-        provider: fontProviders.google(),
-        subsets: ["latin"],
-        weights: ["100 500"],
-        styles: ["normal"],
-      },
     ],
   },
 
