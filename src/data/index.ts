@@ -37,18 +37,18 @@ export const projects: Project[] = [
   {
     title: "Phonaria",
     description:
-      "Pronunciation learning tool that combines grapheme‑to‑phoneme transcription, an interactive IPA chart, and phoneme contrast guidance in a single responsive workspace, backed by a typed phonetics data package.",
+      "Collection of tools to understand pronunciation. Consolidates IPA transcription, interactive charts, minimal pairs, contrasts, and dictionary lookup. Optimized for instant feedback through layered data sources and smart caching.",
     imageSrc: phonariaImage,
-    tech: ["Next.js", "TanStack Query", "Redis", "oRPC", "Drizzle", "Neon"],
+    tech: ["Next.js", "TanStack Query", "Redis", "Server Actions", "Drizzle", "Neon"],
     links: {
       repo: "https://github.com/rigomart/phonaria",
-      demo: "https://phonaria.rigos.dev", 
+      demo: "https://phonaria.rigos.dev",
     },
   },
   {
     title: "Planteria",
     description:
-      "AI planning app for developers that turns product ideas into structured, shippable plans with strict criteria and realtime syncing. Includes a read‑only MCP server for integration with any AI agent.",
+      "AI planning tool that turns product ideas into structured plans with built-in guardrails against scope creep. Uses Firecrawl for research before generating with OpenAI. Also published an MCP server npm package so external AI agents can query plans.",
     imageSrc: planteriaImage,
     tech: [
       "Next.js",
@@ -65,14 +65,15 @@ export const projects: Project[] = [
   },
   {
     title: "Deppulse",
-    description: "Quickly assess whether an open-source project is actively maintained.",
+    description:
+      "Maintenance analyzer that scores repos 0-100 based on commits, issue response times, releases, and community activity. No signup required, instant results with aggressive caching.",
     imageSrc: deppulseImage,
-    tech: ["Next.js","Server Actions", "Github API", "Drizzle", "Neon"],
+    tech: ["Next.js", "Server Actions", "Github API", "Drizzle", "Neon"],
     links: {
       repo: "https://github.com/rigomart/deppulse",
       demo: "https://deppulse.rigos.dev",
     },
-  }
+  },
 ];
 
 export type Experience = {
@@ -89,16 +90,16 @@ export type Experience = {
 
 export const experiences: Experience[] = [
   {
-    title: "Front-End Architect",
-    company: "Sofftek - Pacifico Seguros",
+    title: "Frontend Architect",
+    company: "Softtek - Pacífico Seguros",
     period: {
       start: "Nov 2024",
       end: "Jul 2025",
     },
     highlights: [
-      "Promoted to Architect to lead the firm’s first Microfrontend initiative using Module Federation, migrating the host to Rsbuild and decoupling features to enable parallel team deployments.",
-      "Designed a data-driven modernization strategy using forensic code analysis (Code Maat) to identify 'hotspots' and temporal coupling, prioritizing high-churn refactors.",
-      "Enforced strict TypeScript standards and eliminated 'god files', while managing React 19 / Tailwind 4 upgrades across the platform without disrupting ongoing sprint delivery.",
+      "Led the company's first microfrontend initiative using Module Federation for Peru's second largest insurer, enabling independent deployments across 4 teams.",
+      "Created parallel legacy/modern structure using strangler fig pattern, allowing incremental refactoring without blocking releases.",
+      "Promoted after building internal tooling to analyze churn, complexity, and coupling, driving data-informed prioritization.",
     ],
     tags: ["Architecture", "Microfrontends", "Code Forensics", "DX"],
     stack: [
@@ -110,16 +111,16 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    title: "Senior Front-End Developer",
+    title: "Senior Frontend Developer",
     company: "Atlantic City",
     period: {
       start: "Dec 2022",
       end: "Nov 2024",
     },
     highlights: [
-      "Led the full-stack migration of core financial modules (Payments, Deposits, Balances, Bonuses) from legacy CMS to Next.js, coordinating on-site with vendor teams in Madrid.",
-      "Initiated the transition from Pages Router to App Router to resolve structural performance bottlenecks, establishing a foundation that improved developer velocity.",
-      "Scaled the frontend practice from 4 to 10+ engineers by implementing DevOps workflows (Azure DevOps pipelines, Gitflow), strict TypeScript standards, and centralized Docusaurus documentation.",
+      "Led migration from legacy CMS to Next.js for Peru's largest online casino, rebuilding critical modules from scratch after inheriting incomplete work from external agency.",
+      "Led Next.js Pages → App Router migration and established Azure DevOps CI/CD pipelines, reducing manual deployments and standardizing release process.",
+      "Scaled frontend team from 3 to 9+ engineers, conducting interviews, redesigning selection process, and documenting standards and workflows.",
     ],
     tags: ["Leadership", "Migration", "DevOps", "Scaling"],
     stack: ["Next.js", "TypeScript", "Azure DevOps", "Tailwind CSS"],
