@@ -140,33 +140,6 @@ a:hover {
   }
 }
 
-@keyframes scan {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 0 var(--scan-line-gap);
-  }
-}
-
-.bg-scanlines {
-  --scan-line-gap: 6px;
-  --scan-line-color: rgba(255, 255, 255, 0.03);
-}
-
-.bg-scanlines::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: repeating-linear-gradient(
-    to bottom,
-    var(--scan-line-color) 0 1px,
-    transparent 1px var(--scan-line-gap)
-  );
-  mask-image: linear-gradient(to bottom, black 0%, transparent 50%);
-  animation: scan 1s linear infinite;
-}
-
 .timeline-dot {
   position: relative;
 }

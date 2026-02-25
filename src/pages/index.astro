@@ -1,11 +1,9 @@
 ---
 import ExperienceItem from "../components/ExperienceItem.astro";
 import GithubActivity from "../components/GithubActivity.astro";
-import Logo from "../components/icons/Logo.astro";
-import ArrowRight from "../components/icons/ArrowRight.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import SocialLinks from "../components/SocialLinks.astro";
-import { experiences, projects } from "../data";
+import { experiences, projects, skills } from "../data";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
@@ -20,7 +18,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <h1 class='text-2xl font-semibold tracking-tighter sm:text-4xl'>
             Miguel Rodriguez
           </h1>
-          <p class='font-mono text-sm text-muted'>Frontend Engineer</p>
+          <p class='font-mono text-sm text-muted'>Senior Frontend Engineer</p>
           <div class='mt-1'>
             <SocialLinks />
           </div>
@@ -39,17 +37,24 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
     </header>
 
-    <section class='mb-12 animate-fade-in-blur delay-100'>
+    <section class='mb-6 animate-fade-in-blur delay-100'>
       <p class='text-base leading-relaxed text-foreground/90'>
-        4+ years building frontend systems, working remotely with
-        distributed teams. I love translating complex product requirements into
-        fast, accessible interfaces, shipping pragmatic applications where user
-        experience meets code quality. Lately, I've been exploring the
-        intersection of web development, phonetics, and AI.
+        4+ years building web applications with React, Next.js, and Node.js.
+        Most of my work has been migrating legacy systems to modern stacks,
+        improving codebases, and shipping under tight constraints. I tend to
+        improve whatever I'm working with, be it architecture, processes, or the
+        product itself. I also build side projects around real problems I
+        encounter.
       </p>
     </section>
 
-    <section class='mb-12 animate-fade-in-blur delay-200'>
+    <section class='mb-20 animate-fade-in-blur delay-150'>
+      <p class='font-mono text-xs leading-loose text-muted'>
+        {skills.join(" · ")}
+      </p>
+    </section>
+
+    <section class='mb-20 animate-fade-in-blur delay-200'>
       <h2
         class='mb-6 font-mono text-xs font-medium uppercase tracking-widest text-muted'
       >
@@ -58,38 +63,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <div class='grid gap-6 sm:grid-cols-2'>
         {
           projects.map((project, index) => (
-            <div
-              class='flex animate-fade-in-blur'
-              style={`animation-delay: ${100 + index * 100}ms`}
-            >
-              <ProjectCard project={project} priority={index < 2} />
+            <div class:list={[index === 0 && "sm:col-span-2"]}>
+              <ProjectCard
+                project={project}
+                featured={index === 0}
+                priority={index === 0}
+              />
             </div>
           ))
         }
-        <div
-          class='flex animate-fade-in-blur'
-          style={`animation-delay: ${100 + projects.length * 100}ms`}
-        >
-          <a
-            href='https://github.com/rigomart'
-            target='_blank'
-            rel='noopener noreferrer'
-            class='group flex h-full w-full flex-col items-center justify-center gap-4 rounded-md border border-dashed border-muted/40 bg-surface/50 p-6 transition-all duration-200 hover:border-foreground/20 hover:bg-surface/70'
-            aria-label='See more on GitHub'
-          >
-            <div
-              class='rounded-full bg-surface p-4 transition-colors group-hover:bg-background'
-            >
-              <ArrowRight
-                class='size-4 text-muted transition-colors group-hover:text-foreground'
-              />
-            </div>
-            <span
-              class='font-medium text-muted transition-colors group-hover:text-foreground text-sm'
-              >See more on GitHub</span
-            >
-          </a>
-        </div>
       </div>
     </section>
 
@@ -114,10 +96,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </section>
   </main>
 
-  <div
-    class='bg-scanlines pointer-events-none absolute top-0 left-0 -z-10 h-[60vh] w-full'
-  >
-  </div>
   <div
     class='bg-lines pointer-events-none absolute bottom-0 left-0 -z-10 h-[50vh] w-full'
   >
