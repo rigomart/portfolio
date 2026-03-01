@@ -2,6 +2,7 @@ import type { ImageMetadata } from "astro";
 import phonariaImage from "../assets/phonaria-landing.png";
 import planteriaImage from "../assets/planteria-landing.png";
 import deppulseImage from "../assets/deppulse.png";
+import meridianImage from "../assets/meridian.png";
 
 export const socialLinks = [
   {
@@ -84,6 +85,17 @@ export const projects: Project[] = [
     links: {
       repo: "https://github.com/rigomart/planteria",
       demo: "https://planteria-web.vercel.app/",
+    },
+  },
+  {
+    title: "Meridian",
+    description:
+      "Interactive timezone comparison tool that visualizes two timezones side by side on an SVG world map. Drag time bands to shift through hours, search IANA zones by city, and share selections via URL hash state.",
+    imageSrc: meridianImage,
+    tech: ["React", "TypeScript", "d3-geo", "Tailwind CSS"],
+    links: {
+      repo: "https://github.com/rigomart/meridian",
+      demo: "https://meridian.rigos.dev",
     },
   },
 ];
