@@ -1,0 +1,111 @@
+---
+import ExperienceItem from "../components/ExperienceItem.astro";
+import GithubActivity from "../components/GithubActivity.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import SocialLinks from "../components/SocialLinks.astro";
+import { experiences, projects, skills } from "../data";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+  <main class='relative mx-auto max-w-4xl px-6 py-16 sm:py-24'>
+    <header class='mb-8 animate-fade-in-blur delay-75'>
+      <div
+        class='flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between'
+      >
+        <!-- Left Column: Identity -->
+        <div class='flex flex-col gap-2'>
+          <h1 class='text-2xl font-semibold tracking-tighter sm:text-4xl'>
+            Miguel Rodriguez
+          </h1>
+          <p class='font-mono text-sm text-muted'>Senior Frontend Engineer</p>
+          <div class='mt-1'>
+            <SocialLinks />
+          </div>
+        </div>
+
+        <!-- Right Column: Activity -->
+        <a
+          href='https://github.com/rigomart'
+          target='_blank'
+          rel='noopener noreferrer'
+          class='hidden sm:block opacity-50 hover:opacity-100 transition-opacity'
+          aria-label='View GitHub Profile'
+        >
+          <GithubActivity weeks={30} />
+        </a>
+      </div>
+    </header>
+
+    <section class='mb-6 animate-fade-in-blur delay-100'>
+      <p class='text-base leading-relaxed text-foreground/90'>
+        4+ years building web applications with React, Next.js, and Node.js.
+        Most of my work has been migrating legacy systems to modern stacks,
+        improving codebases, and shipping under tight constraints. I tend to
+        improve whatever I'm working with, be it architecture, processes, or the
+        product itself. I also build side projects around real problems I
+        encounter.
+      </p>
+    </section>
+
+    <section class='mb-20 animate-fade-in-blur delay-150'>
+      <p class='font-mono text-xs leading-loose text-muted'>
+        {skills.join(" · ")}
+      </p>
+    </section>
+
+    <section class='mb-20 animate-fade-in-blur delay-200'>
+      <h2
+        class='mb-6 font-mono text-xs font-medium uppercase tracking-widest text-muted'
+      >
+        Projects
+      </h2>
+      <div class='grid gap-6 sm:grid-cols-2'>
+        {
+          projects.map((project, index) => (
+            <div class:list={[index === 0 && "sm:col-span-2"]}>
+              <ProjectCard
+                project={project}
+                featured={index === 0}
+                priority={index === 0}
+              />
+            </div>
+          ))
+        }
+      </div>
+      <a
+        href='https://github.com/rigomart'
+        target='_blank'
+        rel='noopener noreferrer'
+        class='mt-4 inline-flex items-center gap-1.5 font-mono text-xs text-muted transition-colors hover:text-foreground'
+      >
+        See more on GitHub &rarr;
+      </a>
+    </section>
+
+    <section class='mb-12 animate-fade-in-blur delay-300'>
+      <h2
+        class='mb-6 font-mono text-xs font-medium uppercase tracking-widest text-muted'
+      >
+        Experience
+      </h2>
+      <div class='relative border-border flex flex-col'>
+        {
+          experiences.map((experience, index) => (
+            <div
+              class='animate-fade-in-blur'
+              style={`animation-delay: ${500 + index * 100}ms`}
+            >
+              <ExperienceItem experience={experience} />
+            </div>
+          ))
+        }
+      </div>
+    </section>
+  </main>
+
+  <div
+    class='bg-lines pointer-events-none absolute bottom-0 left-0 -z-10 h-[50vh] w-full'
+  >
+  </div>
+</BaseLayout>
